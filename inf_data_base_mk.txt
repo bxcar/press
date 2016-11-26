@@ -1,0 +1,7 @@
+Database name: data_base_mk
+user: root
+password: root
+______________
+wordpress
+login: mkuser
+password: )rzO2NxmF%jsta7%@s
