@@ -166,17 +166,22 @@
                             <div class="textwidget">
                                 <div role="form" class="wpcf7" id="wpcf7-f47-o1" lang="ru-RU" dir="ltr">
                                     <div class="screen-reader-response"></div>
-                                    <form id="contact-form" action="/#wpcf7-f47-o1" method="post"
+                                    <form id="contact-form" action="/wp-content/themes/sydney/sendmessage.php" method="post"
                                           class="wpcf7-form">
+                                        <!--action="/#wpcf7-f47-o1"
+                                        что бы обрабатывал sendmessage.php но добавлялся элемент внизу
+                                        об успешной отправке нужно вместо полного пути прописать просто
+                                        название файла sendmessage.php-->
                                         <div style="display: none;">
                                             <input type="hidden" name="_wpcf7" value="47">
                                             <input type="hidden" name="_wpcf7_version" value="4.5.1">
                                             <input type="hidden" name="_wpcf7_locale" value="ru_RU">
                                             <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f47-o1">
                                             <input type="hidden" name="_wpnonce" value="3f027fa8db">
+                                            <input type="hidden" name="order" value="Верхняя форма на главной странице">
                                         </div>
                                         <!--<p><label> Ваше имя (обязательно)<br>-->
-                                            <span class="wpcf7-form-control-wrap your-name"><input type="text"
+                                            <span class="wpcf7-form-control-wrap your-name"><input required type="text"
                                                                                                    style="width: 100%;"
                                                                                                    name="your-name"
                                                                                                    placeholder="Ваше имя*"

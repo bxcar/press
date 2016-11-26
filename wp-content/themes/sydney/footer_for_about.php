@@ -112,7 +112,7 @@
                 <p class="team-mail">coralborispol@gmail.com</p>
 
 
-                <p class="team-year">8 лет в туризме</p>
+                <p class="team-year">7 лет в туризме</p>
 
                 <a href="#" class="popmake-129 modal-link product-link img-link"
                    data-order="Проверьте нас (Наталия)"
