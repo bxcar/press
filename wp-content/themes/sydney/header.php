@@ -166,7 +166,7 @@
                             <div class="textwidget">
                                 <div role="form" class="wpcf7" id="wpcf7-f47-o1" lang="ru-RU" dir="ltr">
                                     <div class="screen-reader-response"></div>
-                                    <form id="contact-form" action="/wp-content/themes/sydney/sendmessage.php" method="post"
+                                    <form onsubmit="loaderMainFormTop();" id="contact-form" action="/wp-content/themes/sydney/sendmessage.php" method="post"
                                           class="wpcf7-form">
                                         <!--action="/#wpcf7-f47-o1"
                                         что бы обрабатывал sendmessage.php но добавлялся элемент внизу
@@ -207,7 +207,7 @@
                                                     cols="40" rows="10"
                                                     class="wpcf7-form-control wpcf7-textarea"
                                                     aria-invalid="false"></textarea></span> </label></p>
-                                        <p><input onclick="loaderMainFormTop()" id="submit-but" type="submit" value="Отправить"><!--<img class="ajax-loader"
+                                        <p><input id="submit-but" type="submit" value="Отправить"><!--<img class="ajax-loader"
                                                                                                src="http://localhost/wp-content/plugins/contact-form-7/images/ajax-loader.gif"
                                                                                                alt="Отправка..."
                                                                                                style="visibility: hidden;">-->

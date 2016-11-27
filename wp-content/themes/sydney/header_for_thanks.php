@@ -155,25 +155,65 @@
     <div id="content" class="page-wrap" style="padding-top: 30px; padding-bottom: 0;">
         <div class="container content-wrapper">
             <div class="row">
-                <!--<div class="form" style="width: 500px; height: 500px;">
-                    <p>[contact-form-7 id="47" title="Заполните форму"]</p>
-                </div>
--->
-                <div class="thanks-text">
-                    <p class="thanks-text-header">Спасибо за заявку!<br>
-                        <span class="thanks-text-header-pre">Наш менеджер скоро свяжется с Вами</span></p>
-                    <a href="/" class="back-to-main1">Вернуться&ensp;назад</a>
-                    <div class="social-thanks">
-                        <p class="thanks-text-header-pre">Мы в социальных сетях</p>
-                        <div class="social-thanks-images">
-                            <a href="#"><img src="/wp-content/themes/sydney/img/social-thanks/facebook.png"></a>
-                            <a href="#"><img src="/wp-content/themes/sydney/img/social-thanks/vk.png"></a>
-                            <a href="#"><img src="/wp-content/themes/sydney/img/social-thanks/utube.png"></a>
-                            <a href="#"><img src="/wp-content/themes/sydney/img/social-thanks/insta.png"></a>
-                            <a href="#"><img src="/wp-content/themes/sydney/img/social-thanks/odno.png"></a>
+
+                <?php
+                //$sendto  = 'seo@makintour.com, coralborispol@gmail.com'; //Адреса, куда будут приходить письма
+                $sendto = 'malanchukdima@mail.ru'; //Адреса, куда будут приходить письма
+
+                $phone = $_POST['tel-564'];
+                $name = $_POST['your-name'];
+                $p = trim(strip_tags($_POST['target'], '<br>'))
+                    . trim(strip_tags($_POST['target-manager'], '<br>'))
+                    . trim(strip_tags($_POST['callback'], '<br>'));
+
+                // Формирование заголовка письма
+
+                $subject = '[Новая заявка - Coral Travel г. Борисполь]';
+
+                // Формирование тела письма
+
+                $msg = "Имя: " . $name . "\r\n";
+                $msg .= "Телефон: " . $phone . "\r\n";
+                $msg .= "Идентификатор формы: " . $p . "\r\n";
+
+                // отправка сообщения
+                if (mail($sendto, $subject, $msg)) {
+                    echo "<div class=\"thanks-text\">
+                    <p class=\"thanks-text-header\">Спасибо за заявку!<br>
+                        <span class=\"thanks-text-header-pre\">Наш менеджер скоро свяжется с Вами</span></p>
+                    <a href=\"/\" class=\"back-to-main1\">Вернуться&ensp;назад</a>
+                    <div class=\"social-thanks\">
+                        <p class=\"thanks-text-header-pre\">Мы в социальных сетях</p>
+                        <div class=\"social-thanks-images\">
+                            <a href=\"#\"><img src=\"/wp-content/themes/sydney/img/social-thanks/facebook.png\"></a>
+                            <a href=\"#\"><img src=\"/wp-content/themes/sydney/img/social-thanks/vk.png\"></a>
+                            <a href=\"#\"><img src=\"/wp-content/themes/sydney/img/social-thanks/utube.png\"></a>
+                            <a href=\"#\"><img src=\"/wp-content/themes/sydney/img/social-thanks/insta.png\"></a>
+                            <a href=\"#\"><img src=\"/wp-content/themes/sydney/img/social-thanks/odno.png\"></a>
                         </div>
                     </div>
-                </div>
+                </div>";
+                } else {
+                    echo "<div class=\"thanks-text\">
+                    <p style='font-size: 30px;' class=\"thanks-text-header\">
+                        К сожалениею при отправке формы произошла ошибка&nbsp;:(<br>
+                        <span style='display: inline-block; line-height: 25px; margin-top: 20px;' class=\"thanks-text-header-pre\">Вернитесь обратно и попробуйте еще раз<br>
+                        (также вы можете связаться с нами по электронной почте либо по номеру телефона, которые указаны на сайте)</span>
+                    </p>
+                    <a href=\"/\" class=\"back-to-main1\">Вернуться&ensp;назад</a>
+                    <div class=\"social-thanks\">
+                        <p class=\"thanks-text-header-pre\">Мы в социальных сетях</p>
+                        <div class=\"social-thanks-images\">
+                            <a href=\"#\"><img src=\"/wp-content/themes/sydney/img/social-thanks/facebook.png\"></a>
+                            <a href=\"#\"><img src=\"/wp-content/themes/sydney/img/social-thanks/vk.png\"></a>
+                            <a href=\"#\"><img src=\"/wp-content/themes/sydney/img/social-thanks/utube.png\"></a>
+                            <a href=\"#\"><img src=\"/wp-content/themes/sydney/img/social-thanks/insta.png\"></a>
+                            <a href=\"#\"><img src=\"/wp-content/themes/sydney/img/social-thanks/odno.png\"></a>
+                        </div>
+                    </div>
+                </div>";
+                }
+                ?>
 
 
                 
