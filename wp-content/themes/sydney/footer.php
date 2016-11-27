@@ -247,7 +247,7 @@
                                                     cols="40" rows="10"
                                                     class="wpcf7-form-control wpcf7-textarea"
                                                     aria-invalid="false"></textarea></span> </label></p>
-                                    <p><input id="submit-but-bottom" type="submit" value="Отправить"><!--<img class="ajax-loader"
+                                    <p><input onclick="loaderMainFormBottom()" id="submit-but-bottom" type="submit" value="Отправить"><!--<img class="ajax-loader"
                                                                                                src="http://localhost/wp-content/plugins/contact-form-7/images/ajax-loader.gif"
                                                                                                alt="Отправка..."
                                                                                                style="visibility: hidden;">-->

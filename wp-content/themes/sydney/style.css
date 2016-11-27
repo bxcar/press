@@ -4128,6 +4128,9 @@ input[type="color"]:focus {
 
 /* All Mobile Sizes */
 @media only screen and (max-width: 767px) {
+    .header-in-thanks {
+        height: 50px !important;
+    }
     #load {
         background-size: 15% !important;
         left: 42% !important;
@@ -4271,6 +4274,7 @@ input[type="color"]:focus {
     .site-header {
         padding-top: 17px;
         padding-bottom: 3px;
+        height: 50px;
     }
 
     .row {
@@ -4577,6 +4581,10 @@ input[type="color"]:focus {
 }
 
 @media only screen and (max-width: 479px) {
+    .thanks-text-header {
+        font-size: 30px !important;
+        line-height: 32px;
+    }
     #popmake-129 form,
     #popmake-599 form,
     #popmake-597 form {/**/
@@ -6102,3 +6110,44 @@ p {
     margin-left: auto;
 }
 
+.thanks-text {
+    text-align: center;
+}
+
+.thanks-text-header {
+    color: #0093d0;
+    font-size: 36px;
+    text-transform: uppercase;
+    margin-top: 10%;
+    line-height: 38px;
+}
+
+.thanks-text-header-pre {
+    font-size: 16px;
+    line-height: 20px;
+    text-transform: none;
+    color: #0093d0;
+}
+
+.header-in-thanks {
+    background: #08b4da;
+    height: 80px;
+}
+
+a.back-to-main1 {
+    display: inline-block;
+    padding: 13px 52px;
+    background: #ff7300;
+    color: #fff;
+    text-transform: uppercase;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bolder;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.social-thanks-images img {
+    width: auto;
+    margin-left: 10px;
+}

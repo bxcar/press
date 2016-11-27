@@ -3153,3 +3153,20 @@ for(var i = 0; i < arrun.length; i++){
     select.appendChild(node);
 }
 
+function loaderMainFormTop() {
+    var loading = document.getElementById("submit-but");
+    loading.setAttribute("value", "");
+    loading.setAttribute("style",
+        "background: url(/wp-content/themes/sydney/img/post_preloader.gif) 50% 50% no-repeat #0088e7; width: 100%; margin-left: 0;");
+    var delay = 3000;
+    setTimeout("document.location.href='/thanks/'", delay);
+}
+function loaderMainFormBottom() {
+    var loading = document.getElementById("submit-but-bottom");
+    loading.setAttribute("value", "");
+    loading.setAttribute("style",
+        "background: url(/wp-content/themes/sydney/img/post_preloader.gif) 50% 50% no-repeat #0088e7; width: 100%; margin-left: 0;");
+    var delay = 3000;
+    setTimeout("document.location.href='/thanks/'", delay);
+}
+
