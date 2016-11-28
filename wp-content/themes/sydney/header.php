@@ -164,9 +164,9 @@
                                 Заполните форму сейчас</h3>
                             <p class="under-header-in-form">и получите 5 вариантов отдыха с подробным расчётом цен</p>
                             <div class="textwidget">
-                                <div role="form" class="wpcf7" id="wpcf7-f47-o1" lang="ru-RU" dir="ltr">
+<!--                                <div role="form" class="wpcf7" id="wpcf7-f47-o1" lang="ru-RU" dir="ltr">-->
                                     <div class="screen-reader-response"></div>
-                                    <form onsubmit="loaderMainFormTop();" id="contact-form" action="/wp-content/themes/sydney/sendmessage.php" method="post"
+                                    <form onsubmit="loaderMainFormTop();" id="contact-form" action="/thanks/" method="post"
                                           class="wpcf7-form">
                                         <!--action="/#wpcf7-f47-o1"
                                         что бы обрабатывал sendmessage.php но добавлялся элемент внизу
@@ -220,7 +220,7 @@
                                 </div>
                             </div>
                         </aside>
-                    </div>
+<!--                    </div>-->
                 </div>
                 <h2 id="goto-from-top-button" class="tour-header">Лучшие Цены на&nbsp;Туры по&nbsp;направлениям</h2>
 

@@ -162,9 +162,11 @@
 
                 $phone = $_POST['tel-564'];
                 $name = $_POST['your-name'];
+                $comment  = $_POST['your-message'];
                 $p = trim(strip_tags($_POST['target'], '<br>'))
                     . trim(strip_tags($_POST['target-manager'], '<br>'))
-                    . trim(strip_tags($_POST['callback'], '<br>'));
+                    . trim(strip_tags($_POST['callback'], '<br>'))
+                    . trim(strip_tags($_POST['order'], '<br>'));
 
                 // Формирование заголовка письма
 
@@ -174,6 +176,9 @@
 
                 $msg = "Имя: " . $name . "\r\n";
                 $msg .= "Телефон: " . $phone . "\r\n";
+                if($_POST['your-message']) {
+                    $msg .= "Пожелания к туру: " . $comment . "\r\n";
+                }
                 $msg .= "Идентификатор формы: " . $p . "\r\n";
 
                 // отправка сообщения

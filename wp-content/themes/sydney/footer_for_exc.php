@@ -48,9 +48,8 @@
                 Заполните форму сейчас</h3>
             <p class="under-header-in-form">и получите 5 вариантов отдыха с подробным расчётом цен</p>
             <div class="textwidget">
-                <div role="form" class="wpcf7" id="wpcf7-f47-o1" lang="ru-RU" dir="ltr">
                     <div class="screen-reader-response"></div>
-                    <form onsubmit="loaderMainFormTop();" id="contact-form" action="/wp-content/themes/sydney/sendmessage.php" method="post" class="wpcf7-form">
+                    <form onsubmit="loaderMainFormTop();" id="contact-form" action="/thanks/" method="post" class="wpcf7-form">
                         <div style="display: none;">
                             <input type="hidden" name="_wpcf7" value="47">
                             <input type="hidden" name="_wpcf7_version" value="4.5.1">
@@ -59,7 +58,6 @@
                             <input type="hidden" name="_wpnonce" value="3f027fa8db">
                             <input type="hidden" name="order" value="Форма со страницы Экскурсионные туры">
                         </div>
-                        <!--<p><label> Ваше имя (обязательно)<br>-->
                                             <span class="wpcf7-form-control-wrap your-name"><input required type="text"
                                                                                                    style="width: 100%;"
                                                                                                    name="your-name"
@@ -68,8 +66,7 @@
                                                                                                    class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required"
                                                                                                    aria-required="true"
                                                                                                    aria-invalid="false"></span>
-                        <!--                                        </label></p>-->
-                        <!--                                        <p><label> Контактный телефон (обязательно)<br>-->
+                        
                                             <span class="wpcf7-form-control-wrap tel-564"><input required type="tel"
                                                                                                  style="width: 100%;"
                                                                                                  name="tel-564"
@@ -78,25 +75,18 @@
                                                                                                  size="40"
                                                                                                  class="wpcf7-form-control wpcf7-text wpcf7-tel wpcf7-validates-as-tel"
                                                                                                  aria-invalid="false"></span>
-                        <!--                                        </label></p>-->
-                        <!--                                        <p><label> Пожелания к туру<br>-->
+                        
                                             <span class="wpcf7-form-control-wrap your-message"><textarea
                                                     name="your-message"
                                                     placeholder="Пожелания к туру*"
                                                     cols="40" rows="10"
                                                     class="wpcf7-form-control wpcf7-textarea"
                                                     aria-invalid="false"></textarea></span> </label></p>
-                        <p><input id="submit-but" type="submit" value="Отправить"><!--<img class="ajax-loader"
-                                                                                               src="http://localhost/wp-content/plugins/contact-form-7/images/ajax-loader.gif"
-                                                                                               alt="Отправка..."
-                                                                                               style="visibility: hidden;">-->
-                            <!--                                            class="wpcf7-form-control wpcf7-submit"-->
-                        </p>
+                        <p><input id="submit-but" type="submit" value="Отправить"></p>
                         <div class="wpcf7-response-output wpcf7-display-none"></div>
                     </form>
                     <p class="form-text2">Мы перезвоним вам через
                         10 минут, засекайте!</p>
-                </div>
             </div>
         </aside>
     </div>
