@@ -9,23 +9,6 @@
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
-    <!--<script>
-        window.onload = function () {
-            document.getElementById('contact-form').addEventListener('submit', function (evt) {
-                var loading = document.getElementById("submit-but");
-                loading.setAttribute("value", "");
-                loading.setAttribute("style",
-                    "background: url(/wp-content/themes/sydney/img/post_preloader.gif) 50% 50% no-repeat #0088e7  !important;");
-            }, false);
-            //                    $(event.target).find(".wpcf7-response-output").on("DOMNodeInserted", function (event) {
-            document.getElementById('contact-form').addEventListener('DOMNodeInserted', function (evt) {
-                var loading = document.getElementById("submit-but");
-                loading.setAttribute("value", "Отправить");
-                loading.setAttribute("style",
-                    "background: #0088e7 !important;");
-            });
-        }
-    </script>-->
     <script src="/wp-content/themes/sydney/js/script_for_form_button_footer.js"></script>
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -120,8 +103,6 @@
                         </nav><!-- #site-navigation -->
                     </div>
                     <div class="col-md-8 col-sm-4 col-xs-12 header-number">
-                    <!--<img src="/wp-content/themes/sydney/img/telephone_not_fill.png" width="30" height="30"
-                         style="width: 21px; height: 21px; float: left; margin-right: 10px;">-->
                     <p <!--style="overflow: hidden;-->">098 11 69 555<br><a href="#"><span class="popmake-522 header-number-text">Закажите обратный звонок</span></a>
                 </div>
             </div>
@@ -139,19 +120,6 @@
     <div id="content" class="page-wrap" style="padding-top: 30px; padding-bottom: 0;">
         <div class="container content-wrapper">
             <div class="row">
-                <!--<div class="form" style="width: 500px; height: 500px;">
-                    <p>[contact-form-7 id="47" title="Заполните форму"]</p>
-                </div>
--->
-                <!--<div class="top-form-container"
-                     style="background: url('/wp-content/themes/sydney/img/coralc2.jpg') no-repeat;
-                     background-size: 100%;
-                            width: 900px;
-                            height: 500px;
-                            margin-right: auto;
-                            margin-left: auto;">
-                    <?php /*include "content.php"*/ ?>
-                </div>-->
                 <div id="fon"></div>
                 <div id="load"></div>
                 <div class="filters">
@@ -159,21 +127,7 @@
                                   margin-left: 25px;">
                         <option style="display: none;" value="country-default" disabled selected>Выберите страну</option>
                         <!--<option value="Таиланд">Таиланд</option>
-                        <option value="ОАЕ">ОАЕ</option>
-                        <option value="Египет">Египет</option>
-                        <option value="Испания">Испания</option>
-                        <option value="США">США</option>
-                        <option value="Канада">Канада</option>
-                        <option value="Германия">Германия</option>
-                        <option value="Франция">Франция</option>
-                        <option value="Мексика">Мексика</option>
-                        <option value="Бразилия">Бразилия</option>
-                        <option value="Норвегия">Норвегия</option>
-                        <option value="Доминикана">Доминикана</option>
-                        <option value="Мальдивы">Мальдивы</option>
-                        <option value="Танзания">Танзания</option>
-                        <option value="Шри-Ланка">Шри-Ланка</option>
-                        <option value="Индия">Индия</option>-->
+                        <option value="ОАЕ">ОАЕ</option>-->
                     </select>
                     <select class="select-spec" id="price_sort">
                         <option style="display: none;" value="price-default" disabled selected>цена(по умолчанию)</option>

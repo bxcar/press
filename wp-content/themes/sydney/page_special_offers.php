@@ -11,8 +11,6 @@ get_header_for_special_offers();
     <div id="primary" class="content-area col-md-9">
         <main id="main" class="post-wrap" role="main">
             <?php
-            /*global $wp_query;
-            print_r($wp_query);*/
             $temp = $wp_query; $wp_query= null;
             $wp_query = new WP_Query(); $wp_query->query('showposts=999999' . '&paged='.$paged);
             if (have_posts()) : ?>

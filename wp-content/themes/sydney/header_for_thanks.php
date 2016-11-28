@@ -133,8 +133,6 @@
                         </nav><!-- #site-navigation -->
                     </div>
                     <div class="col-md-8 col-sm-4 col-xs-12 header-number">
-                        <!--<img src="/wp-content/themes/sydney/img/telephone_not_fill.png" width="30" height="30"
-                             style="width: 21px; height: 21px; float: left; margin-right: 10px;">-->
                         <p <!--style="overflow: hidden;-->">098 11 69 555<br><a href="#"><span
                                 class="popmake-522 header-number-text">Закажите обратный звонок</span></a>
                     </div>
@@ -143,14 +141,6 @@
         </div>
     </header><!-- #masthead -->
     <?php sydney_slider_template(); ?>
-
-    <!--    <div class="header-image header-image-contacts">-->
-    <!--        <p class="header-on-top-image">Контакты</p>-->
-    <!--        --><?php //sydney_header_overlay(); ?>
-    <!--        <img class="header-inner" src="/wp-content/themes/sydney/images/contacts.jpg"-->
-    <!--             width="--><?php //echo esc_attr(get_custom_header()->width); ?><!--" alt="-->
-    <?php //bloginfo('name'); ?><!--">-->
-    <!--    </div>-->
 
     <div id="content" class="page-wrap" style="padding-top: 30px; padding-bottom: 0;">
         <div class="container content-wrapper">

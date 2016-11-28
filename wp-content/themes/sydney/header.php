@@ -141,10 +141,6 @@
     <div id="content" class="page-wrap" style="padding-top: 30px; padding-bottom: 0;">
         <div class="container content-wrapper">
             <div class="row">
-                <!--<div class="form" style="width: 500px; height: 500px;">
-                    <p>[contact-form-7 id="47" title="Заполните форму"]</p>
-                </div>
--->
                 <div class="top-form-container">
                     <div class="form-descr box">
                         <h3>Получите <span class="discount-size">скидку</span> <br/>
@@ -168,19 +164,10 @@
                                     <div class="screen-reader-response"></div>
                                     <form onsubmit="loaderMainFormTop();" id="contact-form" action="/thanks/" method="post"
                                           class="wpcf7-form">
-                                        <!--action="/#wpcf7-f47-o1"
-                                        что бы обрабатывал sendmessage.php но добавлялся элемент внизу
-                                        об успешной отправке нужно вместо полного пути прописать просто
-                                        название файла sendmessage.php-->
+                                        <!--action="/#wpcf7-f47-o1"-->
                                         <div style="display: none;">
-                                            <input type="hidden" name="_wpcf7" value="47">
-                                            <input type="hidden" name="_wpcf7_version" value="4.5.1">
-                                            <input type="hidden" name="_wpcf7_locale" value="ru_RU">
-                                            <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f47-o1">
-                                            <input type="hidden" name="_wpnonce" value="3f027fa8db">
                                             <input type="hidden" name="order" value="Верхняя форма на главной странице">
                                         </div>
-                                        <!--<p><label> Ваше имя (обязательно)<br>-->
                                             <span class="wpcf7-form-control-wrap your-name"><input required type="text"
                                                                                                    style="width: 100%;"
                                                                                                    name="your-name"
@@ -189,8 +176,7 @@
                                                                                                    class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required"
                                                                                                    aria-required="true"
                                                                                                    aria-invalid="false"></span>
-                                        <!--                                        </label></p>-->
-                                        <!--                                        <p><label> Контактный телефон (обязательно)<br>-->
+
                                             <span class="wpcf7-form-control-wrap tel-564"><input required type="tel"
                                                                                                  style="width: 100%;"
                                                                                                  name="tel-564"
@@ -199,19 +185,14 @@
                                                                                                  size="40"
                                                                                                  class="wpcf7-form-control wpcf7-text wpcf7-tel wpcf7-validates-as-tel"
                                                                                                  aria-invalid="false"></span>
-                                        <!--                                        </label></p>-->
-                                        <!--                                        <p><label> Пожелания к туру<br>-->
+
                                             <span class="wpcf7-form-control-wrap your-message"><textarea
                                                     name="your-message"
                                                     placeholder="Пожелания к туру*"
                                                     cols="40" rows="10"
                                                     class="wpcf7-form-control wpcf7-textarea"
                                                     aria-invalid="false"></textarea></span> </label></p>
-                                        <p><input id="submit-but" type="submit" value="Отправить"><!--<img class="ajax-loader"
-                                                                                               src="http://localhost/wp-content/plugins/contact-form-7/images/ajax-loader.gif"
-                                                                                               alt="Отправка..."
-                                                                                               style="visibility: hidden;">-->
-                                            <!--                                            class="wpcf7-form-control wpcf7-submit"-->
+                                        <p><input id="submit-but" type="submit" value="Отправить">
                                         </p>
                                         <div class="wpcf7-response-output wpcf7-display-none"></div>
                                     </form>
@@ -223,49 +204,3 @@
 <!--                    </div>-->
                 </div>
                 <h2 id="goto-from-top-button" class="tour-header">Лучшие Цены на&nbsp;Туры по&nbsp;направлениям</h2>
-
-                <!--<div class="textwidget">
-                    <div role="form" class="wpcf7" id="wpcf7-f47-o1" lang="ru-RU" dir="ltr">
-                        <div class="screen-reader-response"></div>
-                        <form id="contact-form" action="/#wpcf7-f47-o1" method="post"
-                              class="wpcf7-form"
-                              novalidate="novalidate">
-                            <div style="display: none;">
-                                <input type="hidden" name="_wpcf7" value="47">
-                                <input type="hidden" name="_wpcf7_version" value="4.5.1">
-                                <input type="hidden" name="_wpcf7_locale" value="ru_RU">
-                                <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f47-o1">
-                                <input type="hidden" name="_wpnonce" value="3f027fa8db">
-                            </div>
-                                            <span style="width: 100%; margin-left: 0;" class="wpcf7-form-control-wrap your-name"><input type="text"
-                                                                                                   style="width: 100%;
-                                                                                                   margin-bottom: 30px;
-                                                                                                   margin-left: 0;
-                                                                                                   margin-top: 30px;"
-                                                                                                   name="your-name"
-                                                                                                   placeholder="Ваше имя*"
-                                                                                                   value="" size="40"
-                                                                                                   class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required"
-                                                                                                   aria-required="true"
-                                                                                                   aria-invalid="false"></span>
-                                            <span style="width: 100%; margin-left: 0;" class="wpcf7-form-control-wrap tel-564"><input required type="tel"
-                                                                                                 style="width: 100%;
-                                                                                                 margin-left: 0;"
-                                                                                                 name="tel-564"
-                                                                                                 placeholder="Контактный телефон*"
-                                                                                                 value=""
-                                                                                                 size="40"
-                                                                                                 class="wpcf7-form-control wpcf7-text wpcf7-tel wpcf7-validates-as-tel"
-                                                                                                 aria-invalid="false"></span>
-
-                            <input class="wpcf7-form-control-wrap" style="width: 100%;
-                                                                                                   margin-bottom: 0;
-                                                                                                   margin-left: 0;
-                                                                                                   margin-top: 0;"
-                                   id="submit-but" type="submit" value="Отправить">
-                            <div class="wpcf7-response-output wpcf7-display-none"></div>
-                            <p style="margin-left: 0; width: 100%;">Відправляючи форму в надаєте згоду на обробку персональних даних згідно
-                                Закону України «Про захист персональних даних»</p>
-                        </form>
-                    </div>
-                </div>-->

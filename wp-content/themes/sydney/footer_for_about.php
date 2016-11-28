@@ -7,46 +7,6 @@
  * @package Sydney
  */
 ?>
-<!--<section class="request">
-    <div class="grid add-padding">
-        <h2><a class="modal-link product-link" href="#tour" data-order="Запрос">Оставьте запрос</a></h2>
-
-        <p class="req-text">и получите сертификат на 1000&nbsp;грн.*, который действует на следующих туроператоров:</p>
-
-        <ul class="req-list">
-            <li><img src="/wp-content/themes/sydney/img/company1.png" alt=""/></li>
-            <li><img src="/wp-content/themes/sydney/img/company2.png" alt=""/></li>
-            <li class="tagbrmobile"><img src="/wp-content/themes/sydney/img/company3.png" alt=""/></li>
-            <li class="tagbrdesktop"><img src="/wp-content/themes/sydney/img/company4.png" alt=""/></li>
-            <li><img src="/wp-content/themes/sydney/img/company5.png" alt=""/></li>
-            <li class="tagbrmobile"><img src="/wp-content/themes/sydney/img/company6.png" alt=""/></li>
-            <li><img src="/wp-content/themes/sydney/img/company7.png" alt=""/></li>
-        </ul>
-
-        <p class="req-text2">Осталось всего 7 сертификатов</p>
-    </div>
-</section>-->
-<!--<div class="privilege">
-    <h1 class="privilege-title">Преимущества поездки на отдых в Египет</h1>
-    <p class="privilege-item"><span class="header-in-privilege-item">Красное море</span> Самое красивое море и самый яркий подводный мир именно в
-        Египте.
-        Красное море - это рай для дайверов, именно здесь можно посмотреть на диковинных
-        рыб и богатый коралловый риф.
-    </p>
-    <p class="privilege-item"><span class="header-in-privilege-item">Сезон круглый год</span>
-        Отдых в Египте всегда комфортен, температура воды в Красном море
-        не опускается ниже 23 С, а воздуха не ниже 24 С. Лето в Египте круглый год!</p>
-    <p class="privilege-item"><span class="header-in-privilege-item">Виза</span> Упрощенный визовый режим -
-        виза оформляется по прилету. Никакой суеты и проблем с документами</p>
-    <p class="privilege-item"><span class="header-in-privilege-item">Выгодные цены</span>
-        Египет находится не далеко, всего в 3.5-4 часах перелета из Украины,
-        и местные цены также радуют, из-за чего отдых в Египте по-настоящему выгодный!</p>
-    <p class="privilege-item"><span class="header-in-privilege-item">Экскурсии</span> Египет - колыбель цивилизаций, ее горячие пустыни более 40 столетий
-        охраняют Сфинксы и древние фараоны. Музеи, памятники, пирамиды и мегаполисы - все это ждет Вас в
-        Египте.</p>
-    <p class="privilege-item"><span class="header-in-privilege-item">Питание "всё включено"</span> Cамый комфортный отдых, когда Вам не нужно заботится ни о чем
-        и у Вас есть возможность неограниченно дегустировать блюда разной кухни.</p>
-</div>-->
 
 <div class="prev about-prev">
     <h2>Принципы работы компании</h2>
@@ -156,26 +116,6 @@
                    data-img="http://www.makintour.com/uploads/Chorna.jpg">Задайте мне вопрос</a>
             </div>
         </div>
-
-        <!--<div class="team-item box">
-            <div class="team-img Korolchuk"></div>
-            <div class="team-info">
-                <h3>Аноним Анонимович</h3>
-
-                <p class="team-tel">+38(099) 213-95-55 </p>
-
-                <p class="team-mail">coralborispol@gmail.com</p>
-
-                <p class="team-year">8 лет в туризме</p>
-
-                <a href="#" class="popmake-129 modal-link product-link img-link"
-                   data-order="Проверьте нас (Наталия)"
-                   data-img="http://www.makintour.com/uploads/Korolchuk.jpg">Задайте мне вопрос</a>
-            </div>
-        </div>-->
-
-        <!--<p class="telephone2"><span>Есть вопрос по отдыху? С&nbsp;удовольствием поможем:</span>
-            +38(068) 528 2227 </p>-->
     </div>
 </section>
 </div>
@@ -204,15 +144,8 @@
             <a class="popmake-158 modal-link" href="#">Соглашение об обработке персональных данных.</a><br />
 
             <a class="popmake-bank modal-link" href="#">Банковская гарантия</a><br />
-
-            <!--            <a class="modal-link" href="#confidenc3">Лицензия</a>-->
         </p>
     </div>
-    <!--<div class="site-info container">
-        <a href="<?php /*echo esc_url(__('http://wordpress.org/', 'sydney')); */ ?>"><?php /*printf(__('Proudly powered by %s', 'sydney'), 'WordPress'); */ ?></a>
-        <span class="sep"> | </span>
-        <?php /*printf(__('Theme: %2$s by %1$s.', 'sydney'), 'aThemes', '<a href="http://athemes.com/theme/sydney" rel="designer">Sydney</a>'); */ ?>
-    </div><!-- .site-info -->
 </footer><!-- #colophon -->
 <?php wp_footer(); ?>
 </div><!-- #page -->

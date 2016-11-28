@@ -96,8 +96,7 @@
                         </nav><!-- #site-navigation -->
                     </div>
                     <div class="col-md-8 col-sm-4 col-xs-12 header-number">
-                        <!--<img src="/wpress/wp-content/themes/sydney/img/telephone_not_fill.png" width="30" height="30"
-                             style="width: 21px; height: 21px; float: left; margin-right: 10px;">-->
+                       
                         <p <!--style="overflow: hidden;-->">098 11 69 555<br><a href="#"><span class="popmake-522 header-number-text">Закажите обратный звонок</span></a>
                     </div>
                 </div>
@@ -112,23 +111,10 @@
         <img class="header-inner" src="/wpress/wp-content/themes/sydney/images/header_about1.jpg"
              width="<?php echo esc_attr(get_custom_header()->width); ?>" alt="<?php bloginfo('name'); ?>">
     </div>
-    <!--header_image();-->
 
     <div id="content" class="page-wrap" style="padding-top: 30px; padding-bottom: 0;">
         <div class="container content-wrapper">
             <div class="row">
-                <!--<div class="form" style="width: 500px; height: 500px;">
-                    <p>[contact-form-7 id="47" title="Заполните форму"]</p>
-                </div>
--->
-                <!--                <div class="top-form-container"-->
-                <!--                     style="background: url('/wpress/wp-content/themes/sydney/img/coralc2.jpg') no-repeat;-->
-                <!--                     background-size: 100%;-->
-                <!--                            width: 900px;-->
-                <!--                            height: 500px;-->
-                <!--                            margin-right: auto;-->
-                <!--                            margin-left: auto;">-->
-                <!--                </div>-->
                 <div style="max-width: 1000px; min-height: 400px; position: relative; margin-left: auto; margin-right: auto;">
                     <p class="wait-text wait-text-exc" id="wait">Подождите: идет загрузка экскурсионных туров</p>
                     <div id="showcase_hike_photo_showcase_module" style="margin-bottom: 50px;"></div>

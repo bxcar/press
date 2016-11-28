@@ -111,8 +111,6 @@
                         </nav><!-- #site-navigation -->
                     </div>
                     <div class="col-md-8 col-sm-4 col-xs-12 header-number">
-                        <!--<img src="/wp-content/themes/sydney/img/telephone_not_fill.png" width="30" height="30"
-                             style="width: 21px; height: 21px; float: left; margin-right: 10px;">-->
                         <p <!--style="overflow: hidden;-->">098 11 69 555<br><a href="#"><span
                                 class="popmake-522 header-number-text">Закажите обратный звонок</span></a>
                     </div>
@@ -132,10 +130,6 @@
     <div id="content" class="page-wrap" style="padding-top: 30px; padding-bottom: 0;">
         <div class="container content-wrapper">
             <div class="row">
-                <!--<div class="form" style="width: 500px; height: 500px;">
-                    <p>[contact-form-7 id="47" title="Заполните форму"]</p>
-                </div>
--->
                 <div class="top-form-container top-form-container-contacts">
                     <div class="contacts-text-left">
                         <p>Приходите к нам. Мы всегда рады нашим туристам!</p>
@@ -143,7 +137,6 @@
                             <span>График работы:</span><br> <strong>Пн-Вс</strong> с 9:00 – 20:00<br>
                             <span>Телефон:</span><br>
                             <strong><span class="contacts-telephone">063 211 95 55</span><br>
-<!--                                <span class="contacts-viber">099 213 95 55</span><br>-->
                                 <span class="contacts-telephone">099 213-95-55<span class="viber-in-contacts"> (Viber, WhatsApp)</span></span><br>
                                 <span class="contacts-telephone">098 116 95 55</span><br></strong>
                             <span>Электронная почта:</span><br>
@@ -213,26 +206,6 @@
                                    data-img="http://www.makintour.com/uploads/Chorna.jpg">Задайте мне вопрос</a>
                             </div>
                         </div>
-
-                        <!--<div class="team-item box">
-                            <div class="team-img Korolchuk"></div>
-                            <div class="team-info">
-                                <h3>Аноним Анонимович</h3>
-
-                                <p class="team-tel">+38(099) 213-95-55 </p>
-
-                                <p class="team-mail">coralborispol@gmail.com</p>
-
-                                <p class="team-year">8 лет в туризме</p>
-
-                                <a href="#" class="popmake-129 modal-link product-link img-link"
-                                   data-order="Проверьте нас (Наталия)"
-                                   data-img="http://www.makintour.com/uploads/Korolchuk.jpg">Задайте мне вопрос</a>
-                            </div>
-                        </div>-->
-
-                        <!--<p class="telephone2"><span>Есть вопрос по отдыху? С&nbsp;удовольствием поможем:</span>
-                            +38(068) 528 2227 </p>-->
                     </div>
                 </section>
 

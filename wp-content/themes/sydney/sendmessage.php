@@ -13,21 +13,13 @@ $order  = $_POST['order'];
 // Формирование заголовка письма
 
 $subject  = '[Новая заявка - Coral Travel Борисполь]';
-//$headers  = "From: ".$name." \r\n";
-//$headers .= "Reply-To: ". strip_tags($name) . "\r\n";
-//$headers .= "MIME-Version: 1.0\r\n";
-//$headers .= "Content-Type: text/html;charset=utf-8 \r\n";
 
 // Формирование тела письма
 
-//$msg  = "<html><body style='font-family:Arial,sans-serif;'>";
-//$msg .= "<h2 style='font-weight:bold;border-bottom:1px dotted #ccc;'>Новая заявка - Coral Travel Борисполь</h2>\r\n";
-//$msg .= "<p><strong>Источник:</strong> ".$source."</p>\r\n";
 $msg .= "Имя: ".$name."\r\n";
 $msg .= "Телефон: ".$phone."\r\n";
 $msg .= "Пожелания к туру: ".$comment."\r\n";
 $msg .= "Идентификатор: ".$order."\r\n";
-//$msg .= "</body></html>";
 
 // отправка сообщения
 if(mail($sendto, $subject, $msg, $headers)) {
