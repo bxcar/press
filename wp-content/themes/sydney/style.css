@@ -6097,7 +6097,7 @@ p {
 }
 
 #showcase_module {
-    max-width: 935px;
+    /*max-width: 935px;*/
     margin-left: auto !important;
     margin-right: auto !important;
 }
@@ -6107,7 +6107,7 @@ p {
 
 
 #tour_search_module_mod2 .itt_content_position {
-    max-width: 935px;
+    /*max-width: 935px;*/
     margin-right: auto;
     margin-left: auto;
 }
@@ -6152,4 +6152,19 @@ a.back-to-main1 {
 .social-thanks-images img {
     width: auto;
     margin-left: 10px;
+}
+
+.wait-text {
+    position: absolute;
+    top: 30%;
+    font-size: 30px;
+    text-align: center;
+}
+
+.wait-text-hot {
+    left: 10%;
+}
+
+.wait-text-exc {
+    left: 15%;
 }

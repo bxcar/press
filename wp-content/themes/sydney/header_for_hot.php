@@ -128,8 +128,10 @@
                             margin-right: auto;
                             margin-left: auto;">
                 </div>-->
-                <div id="showcase_module" style="margin-bottom: 50px;">
+                <div style="max-width: 800px; min-height: 400px; position: relative; margin-left: auto; margin-right: auto;">
+                    <p class="wait-text wait-text-hot" id="wait">Подождите: идет загрузка горящих туров</p>
+                    <div id="showcase_module" style="margin-bottom: 50px;"></div>
+                    <script src="http://module.ittour.com.ua/showcase_search.jsx?id=2416951D504G4O6655326341&ver=1&type=42&kind=52&width_class=55&row_count=4&frame_corners="></script>
                 </div>
-                <script src="http://module.ittour.com.ua/showcase_search.jsx?id=2416951D504G4O6655326341&ver=1&type=42&kind=52&width_class=55&row_count=4&frame_corners="></script>
 
                 
