@@ -6,6 +6,7 @@
  *
  * @package Sydney
  */
+//$GLOBALS["foo"] = $_SERVER['HTTP_REFERER'];
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>

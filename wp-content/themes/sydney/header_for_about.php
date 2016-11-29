@@ -156,7 +156,7 @@
                 <p>
                     <a style="margin-right: 20px; text-decoration: underline;"
                        href="/%d0%ba%d0%be%d0%bd%d1%82%d0%b0%d0%ba%d1%82%d1%8b/">Контакты</a>
-                    <a style="text-decoration: underline; /*color: #ff7300;*/" href="#">Отзывы</a>
+<!--                    <a style="text-decoration: underline; /*color: #ff7300;*/" href="#">Отзывы</a>-->
                 </p>
                 <p class="about">Официальное представительство туристической компании «Coral Travel», расположенное в
                     Борисполе,
