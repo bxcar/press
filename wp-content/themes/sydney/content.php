@@ -50,6 +50,16 @@ AND pmet.meta_value = p.id";
                 $sql .= " ORDER BY length(t.name), t.name ASC";
             } else if ($id == 'price_sortb') {
                 $sql .= " ORDER BY cast(t.name as unsigned) DESC";
+            } else if ($id == 'country-default' or $id == 'price-default') {
+//                $sql .= " ORDER BY cast(p.post_date as unsigned) DESC";
+                $sql = "SELECT p.post_title, p.post_content, t.name FROM wp_posts p, wp_terms t, wp_term_taxonomy tx, wp_term_relationships r
+                        WHERE t.term_id=tx.term_id 
+                        AND tx.taxonomy='post_tag' 
+                        AND tx.term_taxonomy_id=r.term_taxonomy_id 
+                        AND r.object_id=p.id
+                        AND p.post_status != 'trash'
+                        ORDER BY cast(p.id as unsigned) DESC";
+//                AND (SELECT p.id FROM wp_posts po WHERE po.id = p.post_parent)
             } else {
                 $sql = $sql_for_counry_title_and_other." AND p.post_title = '$id'";
             }
@@ -59,6 +69,24 @@ AND pmet.meta_value = p.id";
                 $sql1 .= " ORDER BY length(t.name), t.name ASC";
             } else if ($id == 'price_sortb') {
                 $sql1 .= " ORDER BY cast(t.name as unsigned) DESC";
+            } else if ($id == 'country-default' or $id == 'price-default') {
+                $sql1 = "SELECT p.guid FROM wp_posts p, wp_terms t, wp_term_taxonomy tx, wp_term_relationships r, wp_postmeta pmet
+                            WHERE p.post_status != 'trash'
+                            AND p.post_type = 'attachment'
+                            AND t.term_id=tx.term_id
+                            AND tx.taxonomy='post_tag'
+                            AND tx.term_taxonomy_id=r.term_taxonomy_id
+                            AND r.object_id=p.post_parent
+                            AND pmet.meta_value = p.id
+                            AND (SELECT p.id FROM wp_posts po WHERE po.id = p.post_parent)
+                            ORDER BY cast(p.post_parent as unsigned) DESC";
+                /*t.term_id=tx.term_id
+                AND*/
+                /*AND tx.taxonomy='post_tag'
+                AND tx.term_taxonomy_id=r.term_taxonomy_id
+                AND r.object_id=p.id*/
+//                AND (SELECT p.guid FROM wp_posts po WHERE po.post_title = '$id' AND po.id = p.post_parent)
+//                $sql1 .= " ORDER BY p.post_date DESC";
             } else {
                 $sql1 = $sql_for_country_image." AND (SELECT p.id FROM wp_posts po WHERE po.post_title = '$id' AND po.id = p.post_parent)";
             }
@@ -109,7 +137,8 @@ AND pmet.meta_value = p.id";
     } else {
         $goods = get_goods($db);
     }
-}?>
+} ?>
+
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
     <?php if (has_post_thumbnail() && (get_theme_mod('index_feat_image') != 1)) : ?>

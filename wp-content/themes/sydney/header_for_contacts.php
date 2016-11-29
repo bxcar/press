@@ -123,7 +123,7 @@
     <div class="header-image header-image-contacts">
         <p class="header-on-top-image">Контакты</p>
         <?php sydney_header_overlay(); ?>
-        <img class="header-inner" src="/wp-content/themes/sydney/images/contacts.jpg"
+        <img class="header-inner" src="/wp-content/themes/sydney/images/contacts_optimize.jpg"
              width="<?php echo esc_attr(get_custom_header()->width); ?>" alt="<?php bloginfo('name'); ?>">
     </div>
 

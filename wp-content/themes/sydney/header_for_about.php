@@ -146,7 +146,7 @@
     <div class="header-image header-image-about">
         <p class="header-on-top-image">О нас</p>
         <?php sydney_header_overlay(); ?>
-        <img class="header-inner" src="/wp-content/themes/sydney/img/about-header.jpg"
+        <img class="header-inner" src="/wp-content/themes/sydney/img/about-header_optimize.jpg"
              width="<?php echo esc_attr(get_custom_header()->width); ?>" alt="<?php bloginfo('name'); ?>">
     </div>
 

@@ -107,7 +107,7 @@
     <div class="header-image header-image-hot-tour">
         <p class="header-on-top-image">Горящие туры</p>
         <?php sydney_header_overlay(); ?>
-        <img class="header-inner" src="/wp-content/themes/sydney/images/hot_tour.jpg"
+        <img class="header-inner" src="/wp-content/themes/sydney/images/hot_tour_optimize.jpg"
              width="<?php echo esc_attr(get_custom_header()->width); ?>" alt="<?php bloginfo('name'); ?>">
     </div>
 
