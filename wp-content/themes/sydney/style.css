@@ -27,6 +27,14 @@ Social
     margin-right: auto;
 }
 
+.for-module-hot {
+    max-width: 800px;
+    min-height: 400px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .social-menu-widget {
     padding: 0;
     margin: 0 auto;
@@ -4021,7 +4029,7 @@ input[type="color"]:focus {
         top: 70%;
     }
     /*********************/
-    .for-slider-exc {
+    .for-slider-exc{
         max-width: 460px;
         min-height: 400px;
         position: relative;
@@ -4984,6 +4992,25 @@ input[type="color"]:focus {
         width: 250px !important;
     }
     /************/
+
+    /******HOT-TOUR-MODULE*****/
+    html body #showcase_module  .it_maxi_box {
+        /*max-width: 300px !important;*/
+        min-width: 300px !important;
+    }
+
+    .it_list_big div:nth-child(2) {
+        display: none !important;
+    }
+
+    .for-module-hot {
+        max-width: 550px !important;
+        min-height: 400px;
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    /******HOT-TOUR-MODULE*****/
 }
 
 @media only screen and (max-width: 320px) {
