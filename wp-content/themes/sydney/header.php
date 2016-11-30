@@ -7,6 +7,12 @@
  * @package Sydney
  */
 //$GLOBALS["foo"] = $_SERVER['HTTP_REFERER'];
+session_start();
+/*$_SERVER['HTTP_REFERER']*/
+//    echo "$url";
+$_SESSION['urli'] = $_SERVER['HTTP_REFERER'];
+//echo $_SERVER['HTTP_REFERER'];
+//    echo $_SESSION['urli'];
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>

@@ -140,5 +140,6 @@
 </footer><!-- #colophon -->
 <?php wp_footer(); ?>
 </div><!-- #page -->
+<script  src="http://module.ittour.com.ua/tour_search.jsx?id=9268D57G19O13852420615538&ver=2&type=2970"></script>
 </body>
 </html>

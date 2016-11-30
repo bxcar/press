@@ -118,7 +118,6 @@
                 <div style="max-width: 800px; min-height: 400px; position: relative; margin-left: auto; margin-right: auto;">
                     <p class="wait-text" id="wait">Подождите: идет загрузка модуля для подбора тура</p>
                     <div id="tour_search_module_mod2" style="margin-bottom: 50px;"></div>
-                    <script  src="http://module.ittour.com.ua/tour_search.jsx?id=9268D57G19O13852420615538&ver=2&type=2970"></script>
                 </div>
 
 

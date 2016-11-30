@@ -195,7 +195,7 @@ function sydney_scripts() {
 
 	//wp_enqueue_script('device.js', get_template_directory_uri() . '/add/device.js-master/lib/device.js');
 	//wp_enqueue_script('html5shiv', get_template_directory_uri() . '/js/html5shiv.js');
-//	wp_enqueue_script('jquery-1.8.0.min', get_template_directory_uri() . '/js/lib/jquery-1.8.0.min.js');
+	wp_enqueue_script('jquery-1.8.0.min', get_template_directory_uri() . '/js/lib/jquery-1.8.0.min.js');
 //	wp_enqueue_script('jquery.fancybox.pack.js', get_template_directory_uri() . '/fancybox/jquery.fancybox.pack.js');
 //	wp_enqueue_script('jquery.fancybox.js', get_template_directory_uri() . '/fancybox/jquery.fancybox.js');
 	wp_enqueue_script('jquery.cookie', get_template_directory_uri() . '/js/lib/jquery.cookie.js');

@@ -41,7 +41,6 @@ function sydney_slider_template() {
     }
 
     ?>
-
     <div id="slideshow" class="header-slider" data-speed="<?php echo esc_attr($speed); ?>">
         <div class="slides-container">
             <?php 
@@ -51,7 +50,7 @@ function sydney_slider_template() {
                     <div class="overlay-main"></div>
                         <div class="slide-inner">
                             <div class="contain animated fadeInRightBig text-slider">
-                                <h2 class="maintitle"><?php echo esc_html($slider_title_1); ?></h2>
+                                <h1 class="maintitle"><?php echo esc_html($slider_title_1); ?></h1>
                                 <p class="subtitle"><?php echo esc_html($slider_subtitle_1); ?></p>
                             </div>
                             <?php sydney_slider_button(); ?>

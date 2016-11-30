@@ -6,6 +6,7 @@
  *
  * @package Sydney
  */
+session_start();
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -157,9 +158,11 @@
                     . trim(strip_tags($_POST['target-manager'], '<br>'))
                     . trim(strip_tags($_POST['callback'], '<br>'))
                     . trim(strip_tags($_POST['order'], '<br>'));
-                $url = $_SERVER['HTTP_REFERER'];
 
-                // Формирование заголовка письма
+//                global $urli;
+                $url =  $_SESSION['urli'];
+
+                    // Формирование заголовка письма
 
                 $subject = '[Новая заявка - Coral Travel г. Борисполь]';
 //                $headers  = "From: ".$name." \r\n";

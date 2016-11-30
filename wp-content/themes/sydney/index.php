@@ -10,7 +10,6 @@
  *
  * @package Sydney
  */
-
 get_header(); ?>
 
 <div id="primary" class="content-area col-md-9">
