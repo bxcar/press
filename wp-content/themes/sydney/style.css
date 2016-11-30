@@ -19,6 +19,14 @@ Social
 --------------------------------------------------------------*/
 @import "/wp-content/themes/maintheme/fonts/stylesheet.css";
 
+.for-slider-exc {
+    max-width: 1000px;
+    min-height: 400px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .social-menu-widget {
     padding: 0;
     margin: 0 auto;
@@ -4012,6 +4020,55 @@ input[type="color"]:focus {
     .text-slider-stopped {
         top: 70%;
     }
+    /*********************/
+    .for-slider-exc {
+        max-width: 460px;
+        min-height: 400px;
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    div#itt-hike-photo-showcase.itt-hike-photo-showcase-gallery {
+        min-width: 460px !important;
+    }
+
+    div#itt-hike-photo-showcase .itt-hike-photo-showcase-bottom-info .itt-hike-photo-showcase-title-block {
+        margin-left: 60px !important;
+    }
+
+    div#itt-hike-photo-showcase .itt-hike-photo-showcase-bottom-info .itt-hike-photo-showcase-price-holder {
+        width: auto !important;
+    }
+
+    div#itt-hike-photo-showcase.itt-hike-photo-showcase-gallery {
+        height: 880px !important;
+    }
+
+    div#itt-hike-photo-showcase .itt-hike-photo-showcase-fade-gallery {
+        /*margin-top: 418px !important;*/
+    }
+
+    div#itt-hike-photo-showcase .itt-hike-photo-showcase-select-form  {
+        margin-top: 443px;
+        margin-left: 0 !important;
+    }
+
+    div#itt-hike-photo-showcase .itt-hike-photo-showcase-select-form fieldset.itt-hike-photo-showcase {
+        margin-left: -40px !important;
+    }
+
+    #itt-hike-photo-showcase-item-list-scrollable, .jspContainer {
+        width: 460px !important;
+    }
+
+    div#itt-hike-photo-showcase.itt-hike-photo-showcase-gallery a.itt-hike-photo-showcase-btn-prev, div#itt-hike-photo-showcase.itt-hike-photo-showcase-gallery a.itt-hike-photo-showcase-btn-next {
+        top: 630px !important;
+    }
+
+    .itt-hike-photo-showcase-btn-prev {
+        right: 427px !important;
+    }
+    /***************/
 }
 
 @media only screen and (max-width: 1024px) {
@@ -4855,6 +4912,78 @@ input[type="color"]:focus {
     .text-slider {
         margin-bottom: 15px;
     }
+    /**************/
+    .for-slider-exc {
+        max-width: 300px;
+        min-height: 400px;
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    div#itt-hike-photo-showcase.itt-hike-photo-showcase-gallery {
+        min-width: 300px !important;
+    }
+
+    div#itt-hike-photo-showcase .itt-hike-photo-showcase-bottom-info .itt-hike-photo-showcase-title-block {
+        margin-left: 220px !important;
+    }
+
+    div#itt-hike-photo-showcase .itt-hike-photo-showcase-bottom-info .itt-hike-photo-showcase-price-holder {
+        width: auto !important;
+    }
+
+    div#itt-hike-photo-showcase.itt-hike-photo-showcase-gallery {
+        height: 880px !important;
+    }
+
+    div#itt-hike-photo-showcase .itt-hike-photo-showcase-fade-gallery {
+        /*margin-top: 418px !important;*/
+    }
+
+    div#itt-hike-photo-showcase .itt-hike-photo-showcase-select-form  {
+        margin-top: 443px;
+        margin-left: 0 !important;
+    }
+
+    div#itt-hike-photo-showcase .itt-hike-photo-showcase-select-form fieldset.itt-hike-photo-showcase {
+        margin-left: -50px !important;
+    }
+
+    div#itt-hike-photo-showcase a.selectmenu.itt-hike-photo-showcase-country-select {
+        margin-right: -25px !important;
+    }
+
+    div#itt-hike-photo-showcase .itt-hike-photo-showcase-select-form .empty {
+        display: none !important;
+    }
+
+    #itt-hike-photo-showcase-item-list-scrollable, .jspContainer {
+        width: 300px !important;
+    }
+
+    div#itt-hike-photo-showcase.itt-hike-photo-showcase-gallery a.itt-hike-photo-showcase-btn-prev, div#itt-hike-photo-showcase.itt-hike-photo-showcase-gallery a.itt-hike-photo-showcase-btn-next {
+        top: 630px !important;
+    }
+
+    .itt-hike-photo-showcase-btn-prev {
+        right: 270px !important;
+    }
+
+    div#itt-hike-photo-showcase .itt-hike-photo-showcase-item-list .itt-hike-photo-showcase-title,
+    div#itt-hike-photo-showcase .itt-hike-photo-showcase-item-list .itt-hike-photo-showcase-place{
+        width: 170px;
+    }
+
+    div#itt-hike-photo-showcase .itt-hike-photo-showcase-item-list .itt-hike-photo-showcase-title em.itt-hike-photo-showcase,
+    div#itt-hike-photo-showcase .itt-hike-photo-showcase-bottom-info .itt-hike-photo-showcase-title a.itt-hike-photo-showcase{
+        border-bottom: none !important;
+    }
+
+    .itt-hike-photo-showcase-country-title {
+        width: 250px !important;
+    }
+    /************/
 }
 
 @media only screen and (max-width: 320px) {
@@ -6191,124 +6320,4 @@ a.back-to-main1 {
     left: 15%;
 }
 
-/*********************/
-/*.for-slider-exc {
-    max-width: 460px;
-    min-height: 400px;
-    position: relative;
-    margin-left: auto;
-    margin-right: auto;
-}
-div#itt-hike-photo-showcase.itt-hike-photo-showcase-gallery {
-    min-width: 460px !important;
-}
-
-div#itt-hike-photo-showcase .itt-hike-photo-showcase-bottom-info .itt-hike-photo-showcase-title-block {
-    margin-left: 60px !important;
-}
-
-div#itt-hike-photo-showcase .itt-hike-photo-showcase-bottom-info .itt-hike-photo-showcase-price-holder {
-    width: auto !important;
-}
-
-div#itt-hike-photo-showcase.itt-hike-photo-showcase-gallery {
-    height: 880px !important;
-}
-
-div#itt-hike-photo-showcase .itt-hike-photo-showcase-fade-gallery {
-    !*margin-top: 418px !important;*!
-}
-
-div#itt-hike-photo-showcase .itt-hike-photo-showcase-select-form  {
-    margin-top: 443px;
-    margin-left: 0 !important;
-}
-
-div#itt-hike-photo-showcase .itt-hike-photo-showcase-select-form fieldset.itt-hike-photo-showcase {
-    margin-left: -40px !important;
-}
-
-#itt-hike-photo-showcase-item-list-scrollable, .jspContainer {
-    width: 460px !important;
-}
-
-div#itt-hike-photo-showcase.itt-hike-photo-showcase-gallery a.itt-hike-photo-showcase-btn-prev, div#itt-hike-photo-showcase.itt-hike-photo-showcase-gallery a.itt-hike-photo-showcase-btn-next {
-    top: 630px !important;
-}
-
-.itt-hike-photo-showcase-btn-prev {
-    right: 427px !important;
-}*/
-
-/**************/
-.for-slider-exc {
-    max-width: 300px;
-    min-height: 400px;
-    position: relative;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-div#itt-hike-photo-showcase.itt-hike-photo-showcase-gallery {
-    min-width: 300px !important;
-}
-
-div#itt-hike-photo-showcase .itt-hike-photo-showcase-bottom-info .itt-hike-photo-showcase-title-block {
-    margin-left: 220px !important;
-}
-
-div#itt-hike-photo-showcase .itt-hike-photo-showcase-bottom-info .itt-hike-photo-showcase-price-holder {
-    width: auto !important;
-}
-
-div#itt-hike-photo-showcase.itt-hike-photo-showcase-gallery {
-    height: 880px !important;
-}
-
-div#itt-hike-photo-showcase .itt-hike-photo-showcase-fade-gallery {
-    /*margin-top: 418px !important;*/
-}
-
-div#itt-hike-photo-showcase .itt-hike-photo-showcase-select-form  {
-    margin-top: 443px;
-    margin-left: 0 !important;
-}
-
-div#itt-hike-photo-showcase .itt-hike-photo-showcase-select-form fieldset.itt-hike-photo-showcase {
-    margin-left: -50px !important;
-}
-
-div#itt-hike-photo-showcase a.selectmenu.itt-hike-photo-showcase-country-select {
-    margin-right: -25px !important;
-}
-
-div#itt-hike-photo-showcase .itt-hike-photo-showcase-select-form .empty {
-    display: none !important;
-}
-
-#itt-hike-photo-showcase-item-list-scrollable, .jspContainer {
-    width: 300px !important;
-}
-
-div#itt-hike-photo-showcase.itt-hike-photo-showcase-gallery a.itt-hike-photo-showcase-btn-prev, div#itt-hike-photo-showcase.itt-hike-photo-showcase-gallery a.itt-hike-photo-showcase-btn-next {
-    top: 630px !important;
-}
-
-.itt-hike-photo-showcase-btn-prev {
-    right: 270px !important;
-}
-
-div#itt-hike-photo-showcase .itt-hike-photo-showcase-item-list .itt-hike-photo-showcase-title,
-div#itt-hike-photo-showcase .itt-hike-photo-showcase-item-list .itt-hike-photo-showcase-place{
-    width: 170px;
-}
-
-div#itt-hike-photo-showcase .itt-hike-photo-showcase-item-list .itt-hike-photo-showcase-title em.itt-hike-photo-showcase,
-div#itt-hike-photo-showcase .itt-hike-photo-showcase-bottom-info .itt-hike-photo-showcase-title a.itt-hike-photo-showcase{
-    border-bottom: none !important;
-}
-
-.itt-hike-photo-showcase-country-title {
-    width: 250px !important;
-}
 
