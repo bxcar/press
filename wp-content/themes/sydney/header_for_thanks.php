@@ -135,7 +135,7 @@ session_start();
                     </div>
                     <div class="col-md-8 col-sm-4 col-xs-12 header-number">
                         <p <!--style="overflow: hidden;-->">098 11 69 555<br><a href="#"><span
-                                class="popmake-522 header-number-text">Закажите обратный звонок</span></a>
+                                class="popmake-522 header-number-text">Закажите&nbsp;обратный&nbsp;звонок</span></a>
                     </div>
                 </div>
             </div>
@@ -187,12 +187,16 @@ session_start();
                     echo "<div class=\"thanks-text\">
                     <p class=\"thanks-text-header\">Спасибо за заявку!<br>
                         <span class=\"thanks-text-header-pre\">Наш менеджер скоро свяжется с Вами</span></p>
-                    <a href=\"/\" class=\"back-to-main1\">Вернуться&ensp;назад</a>
+                    <a href=\"javascript:history.back();\" class=\"back-to-main1\">Вернуться&ensp;назад</a>
                     <div class=\"social-thanks\">
                         <p class=\"thanks-text-header-pre\">Мы в социальных сетях</p>
                         <div class=\"social-thanks-images\">
-                            <a href=\"#\"><img src=\"/wp-content/themes/sydney/img/social-thanks/facebook.png\"></a>
-                            <a href=\"#\"><img src=\"/wp-content/themes/sydney/img/social-thanks/vk.png\"></a>
+                            <a href=\"https://www.facebook.com/borispol.coraltravel/\">
+                                <img src=\"/wp-content/themes/sydney/img/social-thanks/facebook.png\">
+                            </a>
+                            <a href=\"https://vk.com/borispol.coraltravel\">
+                                <img src=\"/wp-content/themes/sydney/img/social-thanks/vk.png\">
+                            </a>
                             <!--<a href=\"#\"><img src=\"/wp-content/themes/sydney/img/social-thanks/utube.png\"></a>
                             <a href=\"#\"><img src=\"/wp-content/themes/sydney/img/social-thanks/insta.png\"></a>
                             <a href=\"#\"><img src=\"/wp-content/themes/sydney/img/social-thanks/odno.png\"></a>-->
@@ -206,12 +210,16 @@ session_start();
                         <span style='display: inline-block; line-height: 25px; margin-top: 20px;' class=\"thanks-text-header-pre\">Вернитесь обратно и попробуйте еще раз<br>
                         (также вы можете связаться с нами по электронной почте либо по номеру телефона, которые указаны на сайте)</span>
                     </p>
-                    <a href=\"/\" class=\"back-to-main1\">Вернуться&ensp;назад</a>
+                    <a href=\"javascript:history.back();\" class=\"back-to-main1\">Вернуться&ensp;назад</a>
                     <div class=\"social-thanks\">
                         <p class=\"thanks-text-header-pre\">Мы в социальных сетях</p>
                         <div class=\"social-thanks-images\">
-                            <a href=\"#\"><img src=\"/wp-content/themes/sydney/img/social-thanks/facebook.png\"></a>
-                            <a href=\"#\"><img src=\"/wp-content/themes/sydney/img/social-thanks/vk.png\"></a>
+                           <a href=\"https://www.facebook.com/borispol.coraltravel/\">
+                                <img src=\"/wp-content/themes/sydney/img/social-thanks/facebook.png\">
+                            </a>
+                            <a href=\"https://vk.com/borispol.coraltravel\">
+                                <img src=\"/wp-content/themes/sydney/img/social-thanks/vk.png\">
+                            </a>
                             <!--<a href=\"#\"><img src=\"/wp-content/themes/sydney/img/social-thanks/utube.png\"></a>
                             <a href=\"#\"><img src=\"/wp-content/themes/sydney/img/social-thanks/insta.png\"></a>
                             <a href=\"#\"><img src=\"/wp-content/themes/sydney/img/social-thanks/odno.png\"></a>-->

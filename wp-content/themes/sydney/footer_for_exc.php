@@ -143,5 +143,6 @@
 
 <?php wp_footer(); ?>
 </div><!-- #page -->
+<script src="http://module.ittour.com.ua/showcase_search.jsx?id=2416951D504G4O6655326341&type=95&kind=50&width_class=55&row_count=16&border_color=8BCAFF&stars_color=EC3902&price_color=EC3902&button_background_color=52A7DD&select_controls_color=EC3902&bgg_hike_photo_showcase_font_color=000000&bgg_hike_photo_showcase_background_color=FFFFFF&bgg_hike_photo_showcase_background_color_item=F1F1F1&bgg_hike_photo_showcase_order_title_main_color=EBECF2&bgg_hike_photo_showcase_order_title_info_color=1E8FD9"></script>
 </body>
 </html>

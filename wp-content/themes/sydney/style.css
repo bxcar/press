@@ -35,6 +35,14 @@ Social
     margin-right: auto;
 }
 
+  .tour-selection-module {
+    max-width: 800px;
+    min-height: 400px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
 .social-menu-widget {
     padding: 0;
     margin: 0 auto;
@@ -3883,7 +3891,25 @@ input[type="color"]:focus {
 }
 
 /* Smaller than standard 980 */
+@media only screen and (max-width: 991px) and (orientation: landscape) {
+    .site-footer {
+      position: static !important;
+   }
+}
 @media only screen and (max-width: 991px) {
+    .soc-widget-all {
+        width: 48% !important;
+    }
+    #vk_groups {
+        float: left !important;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #facebook body {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
     #popmake-129,
     #popmake-599,
     #popmake-597 {
@@ -4080,6 +4106,10 @@ input[type="color"]:focus {
 }
 
 @media only screen and (max-width: 1024px) {
+
+    .thanks-text-header {
+        margin-top: 0% !important;
+    }
     .site-header {
         background: #08b4da !important;
     }
@@ -4198,6 +4228,21 @@ input[type="color"]:focus {
 
 /* All Mobile Sizes */
 @media only screen and (max-width: 767px) {
+
+    #facebook {
+        overflow: visible !important;
+    }
+   .thanks-text-header {
+        font-size: 30px !important;
+    }
+
+  #popmake-508 .content-hotel-title {
+    display: inline-block;
+    margin-top: -15px;
+   }
+   .wait-text-hot, .wait-text-exc {
+        left: 0% !important;
+    }
     .header-in-thanks {
         height: 50px !important;
     }
@@ -4623,9 +4668,353 @@ input[type="color"]:focus {
         padding-left: 0px !important;
         padding-right: 0px !important;
     }
+
+    /******HOT-TOUR-MODULE*****/
+    html body #showcase_module  .it_maxi_box {
+        /*max-width: 300px !important;*/
+        min-width: 300px !important;
+    }
+
+    .it_list_big div:nth-child(2),
+    .it_list_big div:nth-child(4) {
+        display: none !important;
+    }
+
+    .for-module-hot {
+        max-width: 550px !important;
+        min-height: 400px;
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .it_tour_border {
+        width: 100% !important;
+    }
+
+    html body #showcase_module * .s_ellipsis {
+        overflow: visible !important;
+    }
+
+    html body #showcase_module * .it_price_top {
+        margin-top: 50px !important;
+   }
+
+   #ittour_showcase_show_countries {
+       width: 30% !important;
+   }
+   
+   html body #showcase_module * .it_box_name_inner h3 .s_ellipsis {
+       display: inline-block;
+       width: 220px !important;
+       overflow: hidden !important;
+   }
+
+   html body #showcase_module * .it_box_name_inner h3 a {
+       background: none !important;
+   }
+
+  .it_box_name_inner a div:nth-child(2) {
+       display: none !important;
+  }
+
+  html body #showcase_module * .it_description_box .it_description_title {
+      display: none !important;
+  }
+
+  .ittour_order_right_list {
+     float: none !important;
+  }
+
+  .ittour_order_block_content_box {
+     width: 330px !important;
+  }
+
+  html body #isolate * .ittour_order_block .ittour_order_block_tour_info .ittour_order_block_content_box {
+     margin-left: 330px !important;
+  }
+
+  html body #isolate .ittour_order_block .ittour_order_block_title_box .ittour_order_block_title_box_center_corner {
+     width: 332px !important;
+     margin-left: 323px !important;
+  }
+
+  html body #isolate .ittour_order_block .ittour_order_block_title_box  .it_gradient_right {
+     width: 330px !important;
+  }
+
+  html body #isolate * .it_bg_right_bottom_it {
+     width: 327px !important;
+     margin-left: 323px !important;
+  }
+  html body #isolate .ittour_order_block .ittour_order_block_tour_info .ittour_order_block_content_box .ittour_order_block_content_box_left_frame .ittour_order_hotel_name_tour_price .ittour_order_hotel_name .ittour_order_down .ittour_order_city_name_green {
+     display: inline-block !important;
+     margin-left: -385px !important;
+  }
+
+ html body #tour_search_module *, html body #showcase_module *, html body #showcase_day_showcase_module *, html body #showcase_country_showcase_module *, html body #showcase_hike_showcase_module *, html body #isolated * {
+     border: none !important;
+  }
+
+  html body #isolate .ittour_order_block .ittour_order_block_transport_info  table td {
+     border-top: none !important;
+  }
+
+  .ittour_order_block_transport_info tbody tr th, .ittour_order_block_transport_info tbody tr td {
+     display: none !important;
+  }
+
+   .ittour_order_block_transport_info tbody tr th:nth-child(3), .ittour_order_block_transport_info tbody tr td:nth-child(3) {
+     display: table !important;
+     width: 300px !important;
+     margin-left: 15px !important;
+    
+  }
+
+  html body #isolate .ittour_order_block .ittour_order_block_transport_info  table td {
+     height: 30px !important;
+  }
+
+  html body #isolate .ittour_order_block .ittour_order_block_transport_info  table .first_cell th {
+    height: 30px !important;
+    margin-top: 20px !important;
+    background: none !important;
+  }
+
+  .ittour_order_right_list ul li a,
+  .ittour_order_meteo_box {
+     display: none !important;
+  }
+
+  .ittour_order_grey_form_center_left ul li input {
+     margin-left: 0px !important;
+  }
+
+  html body #isolate .ittour_order_block .ittour_order_block_customer_info .ittour_order_grey_form .ittour_order_grey_form_center .ittour_order_grey_form_center_right ul li a.ittour_order_btn_send {
+     margin-top: 50px !important;
+     float: none !important;
+     margin-left: -250px !important;
+  }
+
+    /**fix-exc-module**/
+   .ittour_order_hike_hotel_name .ittour_order_hotel a {
+     width: 300px !important;
+   }
+   .orbit-wrapper {
+    width: 315px !important;
+  }
+
+  .ittour_order_block_customer_info {
+     padding-left: 3px !important;
+  }
+
+   /**fix-exc-module**/
+
+    /******HOT-TOUR-MODULE*****/
+
+   /*******TOUR-SELECTION-MODULE*****/
+  .tour-selection-module {
+     /*max-width: 350px;*/
+     min-height: 400px;
+     position: relative;
+     margin-left: auto;
+     margin-right: auto;
+   }
+
+  #tour_search_module_mod2 li.itt_directions_position {
+     position: absolute !important;
+     top: 30px !important;
+     left: 100px !important;
+  }
+
+  #tour_search_module_mod2 {
+     min-width: 300px !important;
+  }
+
+  .itt_col-xs-2
+  {
+     display: none !important;
+  }
+
+  .itt_col-md-6 {
+     margin-left: 0 !important;
+     width: 200px !important;
+     margin-top: 20px !important;
+  }
+
+   #tour_search_module_mod2     div.itt_date_block_media_position {
+    float: none !important; 
+    position: static !important; 
+    margin-top: 100px !important;
+    margin-left: -130px !important;
+  }
+
+   div.itt_departure_date {
+    left: -50px !important;
+    /*position: static !important;
+    bottom: none !important;
+    left: none !important;
+    margin-left: -200px !important;*/
+  }
+
+   #tour_search_module_mod2 div.itt_price_range_block_two {
+    margin-top: 150px;
+    margin-left: -30px;
+  }
+ 
+  #tour_search_module_mod2 .itt_content_position {
+     width: 330px !important;
+  }
+  
+  #tour_search_module_mod2 div.itt_night_select_mod_position_two {
+      min-width: 157px;
+      top: 70px;
+      left: -95px !important;
+  }
+
+  #tour_search_module_mod2 div.itt_night_select_mod_position_two {
+  min-width: 157px !important;
+  }
+
+  #tour_search_module_mod2.itt_custom_media_class_max_width_768 button.itt_search_tour_btn {
+  margin-top: 90px !important;
+  }
+
+  .itt_button_search_tour button {
+     margin-right: 87px !important;
+  }
+
+  .itt_col-xs-6 {
+     width: 200px !important;
+     margin-left: -38px !important;
+  }
+
+  .itt_night_select_mod_position_two .itt_search_module_grey_color {
+    left: 20px !important;
+  }
+
+  #itt_issuing_search_package_tours {
+     width: 330px !important;
+     min-width: 330px !important;
+     overflow: hidden;
+  }
+
+  #itt_issuing_search_package_tours table.itt_issuing_search_table_text td:first-child,
+  #itt_issuing_search_package_tours div.itt_custom_select_other_date_styled_select, 
+  #tour_search_module_mod2 ul.itt_other_dates_list li {
+    display: none !important;
+  }
+
+  #itt_issuing_search_package_tours div.itt_currency_link_chex span {
+     margin-top: 10px;
+     display: inline-block;
+  }
+
+  #itt_issuing_search_package_tours a.itt_read_more_button, 
+  #itt-module-search-mobile .itt-msm-result-wrap .itt_read_more_button_mobile  {
+    margin-top: 0px !important;
+  }
+
+  .itt_tour_departure_date_in_search_result_package span:last-child {
+    display: block !important;
+  }
+
+  #itt_issuing_search_package_tours div.itt_location_marker {
+    border-bottom: none !important;
+  }
+
+  #itt_issuing_search_package_tours div.itt_currency_link_chex span {
+    margin-top: 120px !important;
+  }
+  #itt_issuing_search_package_tours ul.itt_issuing_search_text_price_list li {
+     display: none;
+  }
+
+  #itt_issuing_search_package_tours ul.itt_issuing_search_currency_swith li span {
+     display: none;
+  }
+ #itt_issuing_search_package_tours ul.itt_issuing_search_currency_swith li:last-child {
+     position: relative;
+     top: 7px;
+  }
+
+  #itt_issuing_search_package_tours div.itt_location_marker {
+    width: 118px !important;
+    white-space: normal !important;
+  }
+
+  .itt_custom_media_class_min_width_768 .itt_col-sm-8 {
+     width: 100% !important;
+  }
+
+   #tour_search_module_mod2 div.itt_right_block_max-width {
+      float: none !important;
+   }
+
+.itt_custom_media_class_min_width_768 .itt_col-sm-4 {
+     width: 100% !important;
+  }
+
+   #tour_search_module_mod2 .itt_price_block {
+      margin-top: 320px !important;
+      /*margin-left: 18px;*/
+      margin-right: -57px;
+   }
+
+   #tour_search_module_mod2 .itt_photo_left_block  {
+      margin-left: 0px !important;
+   }
+
+   #tour_search_module_mod2 .itt_person2_bg,
+   #tour_search_module_mod2 .itt_tour_view_item a {
+      display: none !important;
+   }
+
+   #tour_search_module_mod2 table.itt_flight_list_two {
+      display: none !important;
+   }
+
+   #tour_search_module_mod2 h2.itt_2h_tittle_tour {
+      display: none !important;
+   }
+
+   .itt_custom_media_class_min_width_768 .itt_col-sm-6 {
+      width: 100% !important;
+   }
+  
+   #tour_search_module_mod2 .itt_form_name dd input,
+   #tour_search_module_mod2 .itt_form_name dt,
+   #tour_search_module_mod2 .itt_form_name dd textarea,
+   #tour_search_module_mod2 img,
+   #tour_search_module_mod2 span.itt_captcha_refresh,
+   #tour_search_module_mod2 input.itt_captcha_input,
+   #tour_search_module_mod2 div.itt_add_person>label, #tour_search_module_mod2 div.itt_pay_tour_add>label,
+   #tour_search_module_mod2 div.itt_md_info_payment_text,
+   #tour_search_module_mod2 div.itt_send_form_button_position>button,
+   #tour_search_module_mod2 .itt_send_btn,
+   #tour_search_module_mod2 div.itt_form_date_blcok {
+      display: none !important;
+   }
+
+   #tour_search_module_mod2 .itt_captcha_wrap_1 {
+      display: none !important;
+   }
+
+   #tour_search_module_mod2 .itt_accordion_tabs li.itt_tab_head_cont section {
+     width: 300px !important;
+  }
 }
 
 /* Mobile Portrait Size */
+@media only screen and (max-width: 600px) {
+    .soc-widget-all {
+        width: 75% !important;
+    }
+
+    .soc-widget-all #facebook body{
+        margin-left: -40px;
+    }
+}
 @media only screen and (max-width: 530px) {
     .content-hotel-title {
         height: 35px;
@@ -4651,8 +5040,29 @@ input[type="color"]:focus {
 }
 
 @media only screen and (max-width: 479px) {
+    #vk_groups {
+        margin-left: -40px;
+        overflow: hidden;
+    }
+
+    .soc-widget-all iframe{
+        /*overflow: visible !important;*/
+        /*margin-left: -40px !important;*/
+    }
+   .thanks-text-header-pre {
+     margin-top: -17px;
+  }
+
+   a.back-to-main1 {
+     display: inline-block;
+     margin-top: 15px !important;
+   }
+   #popmake-508 .content-hotel-title {
+    margin-bottom: 10px;
+   }
+
     .thanks-text-header {
-        font-size: 30px !important;
+        font-size: 25px !important;
         line-height: 32px;
     }
     #popmake-129 form,
@@ -4985,32 +5395,13 @@ input[type="color"]:focus {
 
     div#itt-hike-photo-showcase .itt-hike-photo-showcase-item-list .itt-hike-photo-showcase-title em.itt-hike-photo-showcase,
     div#itt-hike-photo-showcase .itt-hike-photo-showcase-bottom-info .itt-hike-photo-showcase-title a.itt-hike-photo-showcase{
-        border-bottom: none !important;
+        /*border-bottom: none !important;*/
     }
 
     .itt-hike-photo-showcase-country-title {
         width: 250px !important;
     }
     /************/
-
-    /******HOT-TOUR-MODULE*****/
-    html body #showcase_module  .it_maxi_box {
-        /*max-width: 300px !important;*/
-        min-width: 300px !important;
-    }
-
-    .it_list_big div:nth-child(2) {
-        display: none !important;
-    }
-
-    .for-module-hot {
-        max-width: 550px !important;
-        min-height: 400px;
-        position: relative;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    /******HOT-TOUR-MODULE*****/
 }
 
 @media only screen and (max-width: 320px) {
@@ -5694,6 +6085,7 @@ input[type="color"]:focus {
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
     color: #FF5516;
+    margin-top: 50px;
 }
 
 .header-bottom-form span {
@@ -6056,12 +6448,15 @@ p {
     /*margin-left: 15%;*/
     font-size: 18px;
     margin-left: 0;
+    margin-bottom: 20px;
 }
 
 #popmake-508 .content-hotel-title {
     margin-left: 0px;
     text-align: center;
     font-size: 18px;
+    display: block;
+    /*margin-bottom: -35px;*/
 }
 
 #popmake-508 #hotel-country {
@@ -6071,7 +6466,7 @@ p {
     text-align: center;
     font-size: 16px;
     margin-left: 10px;
-    margin-top: 5px;
+    margin-top: -15px;
 }
 
 #popmake-508 .content-top-line {
@@ -6347,4 +6742,10 @@ a.back-to-main1 {
     left: 15%;
 }
 
+#tour_search_module_mod2 div.itt_wifi_icons_position img {
+   width: auto;
+}
 
+.soc-widget-all {
+    width: 75%; margin-left: auto; margin-right: auto;
+}

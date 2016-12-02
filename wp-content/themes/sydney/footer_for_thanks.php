@@ -27,7 +27,6 @@
 
 <!--</div>-->
 <?php wp_footer(); ?>
-</div><!-- #page -->
 <footer style="position: absolute; bottom:0; width: 100%;" id="colophon" class="site-footer" role="contentinfo">
     <div class="grid foot">
         <p class="f-text1 box">ООО «ХОРОШЕЕ АГЕНСТВО» <br/>
@@ -47,5 +46,6 @@
         </p>
     </div>
 </footer><!-- #colophon -->
+</div><!-- #page -->
 </body>
 </html>

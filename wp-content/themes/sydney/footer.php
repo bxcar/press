@@ -57,8 +57,8 @@
             <div class="team-info">
                 <h3>Вознюк Адриана</h3>
 
-                <p class="team-tel">+38 099 213-95-55</p>
-                <p class="viber-whatsapp"><span>(Viber, WhatsApp)</span> +38 099 213-95-55</p>
+                <p class="team-tel">+38 099 213-95-55<br><span style="font-size: 12px">(Viber, WhatsApp)</span></p>
+                <!--<p class="viber-whatsapp"><span>(Viber, WhatsApp)</span> +38 099 213-95-55</p>-->
 
                 <p class="team-mail">coralborispol@gmail.com</p>
 
@@ -77,8 +77,8 @@
             <div class="team-info">
                 <h3>Легкая Людмила</h3>
 
-                <p class="team-tel">+38 099 213-95-55</p>
-                <p class="viber-whatsapp"><span>(Viber, WhatsApp)</span> +38 099 213-95-55</p>
+                <p class="team-tel">+38 099 213-95-55<br><span style="font-size: 12px">(Viber, WhatsApp)</span></p>
+                <!--<p class="viber-whatsapp"><span>(Viber, WhatsApp)</span> +38 099 213-95-55</p>-->
 
                 <p class="team-mail">coralborispol@gmail.com</p>
 
@@ -95,8 +95,8 @@
             <div class="team-info">
                 <h3>Тютюн Анна</h3>
 
-                <p class="team-tel">+38 099 213-95-55 </p>
-                <p class="viber-whatsapp"><span>(Viber, WhatsApp)</span> +38 099 213-95-55</p>
+                <p class="team-tel">+38 099 213-95-55<br><span style="font-size: 12px">(Viber, WhatsApp)</span></p>
+                <!--<p class="viber-whatsapp"><span>(Viber, WhatsApp)</span> +38 099 213-95-55</p>-->
 
                 <p class="team-mail">coralborispol@gmail.com </p>
 
@@ -148,12 +148,12 @@
                             Заполните форму сейчас</h3>
                         <p class="under-header-in-form">и получите 5 вариантов отдыха с подробным расчётом цен</p>
                         <div class="textwidget">
-                                <div class="screen-reader-response"></div>
-                                <form onsubmit="loaderMainFormBottom();" id="contact-form-bottom" action="/thanks/"
-                                      method="post" class="wpcf7-form"> <!--/wp-content/themes/sydney/sendmessage.php-->
-                                    <div style="display: none;">
-                                        <input type="hidden" name="order" value="Нижняя форма на главной странице">
-                                    </div>
+                            <div class="screen-reader-response"></div>
+                            <form onsubmit="loaderMainFormBottom();" id="contact-form-bottom" action="/thanks/"
+                                  method="post" class="wpcf7-form"> <!--/wp-content/themes/sydney/sendmessage.php-->
+                                <div style="display: none;">
+                                    <input type="hidden" name="order" value="Нижняя форма на главной странице">
+                                </div>
 
                                             <span class="wpcf7-form-control-wrap your-name"><input required type="text"
                                                                                                    style="width: 100%;"
@@ -179,15 +179,37 @@
                                                     cols="40" rows="10"
                                                     class="wpcf7-form-control wpcf7-textarea"
                                                     aria-invalid="false"></textarea></span> </label></p>
-                                    <p><input id="submit-but-bottom" type="submit" value="Отправить">
-                                    </p>
-                                    <div class="wpcf7-response-output wpcf7-display-none"></div>
-                                </form>
-                                <p class="form-text2">Мы перезвоним вам через
-                                    10 минут, засекайте!</p>
-                            </div>
+                                <p><input id="submit-but-bottom" type="submit" value="Отправить">
+                                </p>
+                                <div class="wpcf7-response-output wpcf7-display-none"></div>
+                            </form>
+                            <p class="form-text2">Мы перезвоним вам через
+                                10 минут, засекайте!</p>
+                        </div>
                     </aside>
                 </div>
+            </div>
+            <div class="soc-widget-all">
+                <script type="text/javascript" src="//vk.com/js/api/openapi.js?136"></script>
+
+                <!-- VK Widget -->
+                <div style="/*margin-left: auto; margin-right: auto;*/ float: right; margin-bottom: 50px;"
+                     class="soc-widget" id="vk_groups"></div>
+                <script type="text/javascript">
+                    VK.Widgets.Group("vk_groups", {
+                        mode: 4,
+                        width: "350",
+                        height: "500",
+                        color1: '0093D0',
+                        color2: 'FFFFFF',
+                        color3: 'FFFFFF'
+                    }, 98535579);
+                </script>
+
+                <iframe
+                    src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fborispol.coraltravel%2F&tabs=timeline&width=350&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
+                    width="350" height="500" style="border:none;/*overflow:hidden;*/" scrolling="no" frameborder="0"
+                    allowTransparency="true"></iframe>
             </div>
         </div>
     </div>

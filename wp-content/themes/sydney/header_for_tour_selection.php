@@ -96,7 +96,7 @@
                         </nav><!-- #site-navigation -->
                     </div>
                     <div class="col-md-8 col-sm-4 col-xs-12 header-number">
-                        <p <!--style="overflow: hidden;-->">098 11 69 555<br><a href="#"><span class="popmake-522 header-number-text">Закажите обратный звонок</span></a>
+                        <p <!--style="overflow: hidden;-->">098 11 69 555<br><a href="#"><span class="popmake-522 header-number-text">Закажите&nbsp;обратный&nbsp;звонок</span></a>
                     </div>
                 </div>
             </div>
@@ -115,9 +115,15 @@
     <div id="content" class="page-wrap" style="padding-top: 30px; padding-bottom: 0;">
         <div class="container content-wrapper">
             <div class="row">
-                <div style="max-width: 800px; min-height: 400px; position: relative; margin-left: auto; margin-right: auto;">
+                <div class="tour-selection-module">
                     <p class="wait-text" id="wait">Подождите: идет загрузка модуля для подбора тура</p>
+                    
                     <div id="tour_search_module_mod2" style="margin-bottom: 50px;"></div>
+                             <script> 
+                             document.getElementById('tour_search_module_mod2').addEventListener('DOMNodeInserted', function (evt) {
+                             var loading = document.getElementById("wait");
+                             loading.setAttribute("style", "display: none");
+                             }, false); </script>
                 </div>
 
 

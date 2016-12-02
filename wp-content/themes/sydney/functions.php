@@ -4,8 +4,8 @@
  *
  * @package Sydney
  */
-update_option( 'siteurl', 'http://192.168.0.98/' );
-update_option( 'home', 'http://192.168.0.98/' );
+update_option( 'siteurl', 'http://192.168.0.98' );
+update_option( 'home', 'http://192.168.0.98' );
 $my_post = array();
 $my_post['ID'] = 267;
 $my_post['guid'] = '/wp-content/uploads/2016/11/plaza-1.jpg';

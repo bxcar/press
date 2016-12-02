@@ -66,8 +66,8 @@
             <div class="team-info">
                 <h3>Вознюк Адриана</h3>
 
-                <p class="team-tel">+38 099 213-95-55</p>
-                <p class="viber-whatsapp"><span>(Viber, WhatsApp)</span> +38 099 213-95-55</p>
+                <p class="team-tel">+38 099 213-95-55<br><span style="font-size: 12px">(Viber, WhatsApp)</span></p>
+                <!--<p class="viber-whatsapp"><span>(Viber, WhatsApp)</span> +38 099 213-95-55</p>-->
 
                 <p class="team-mail">coralborispol@gmail.com</p>
 
@@ -86,8 +86,8 @@
             <div class="team-info">
                 <h3>Легкая Людмила</h3>
 
-                <p class="team-tel">+38 099 213-95-55</p>
-                <p class="viber-whatsapp"><span>(Viber, WhatsApp)</span> +38 099 213-95-55</p>
+                <p class="team-tel">+38 099 213-95-55<br><span style="font-size: 12px">(Viber, WhatsApp)</span></p>
+                <!--<p class="viber-whatsapp"><span>(Viber, WhatsApp)</span> +38 099 213-95-55</p>-->
 
                 <p class="team-mail">coralborispol@gmail.com</p>
 
@@ -104,8 +104,8 @@
             <div class="team-info">
                 <h3>Тютюн Анна</h3>
 
-                <p class="team-tel">+38 099 213-95-55 </p>
-                <p class="viber-whatsapp"><span>(Viber, WhatsApp)</span> +38 099 213-95-55</p>
+                <p class="team-tel">+38 099 213-95-55<br><span style="font-size: 12px">(Viber, WhatsApp)</span></p>
+                <!--<p class="viber-whatsapp"><span>(Viber, WhatsApp)</span> +38 099 213-95-55</p>-->
 
                 <p class="team-mail">coralborispol@gmail.com </p>
 

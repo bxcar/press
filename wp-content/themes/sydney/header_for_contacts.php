@@ -112,7 +112,7 @@
                     </div>
                     <div class="col-md-8 col-sm-4 col-xs-12 header-number">
                         <p <!--style="overflow: hidden;-->">098 11 69 555<br><a href="#"><span
-                                class="popmake-522 header-number-text">Закажите обратный звонок</span></a>
+                                class="popmake-522 header-number-text">Закажите&nbsp;обратный&nbsp;звонок</span></a>
                     </div>
                 </div>
             </div>
@@ -156,8 +156,8 @@
                             <div class="team-info">
                                 <h3>Вознюк Адриана</h3>
 
-                                <p class="team-tel">+38 099 213-95-55</p>
-                                <p class="viber-whatsapp"><span>(Viber, WhatsApp)</span> +38 099 213-95-55</p>
+                                <p class="team-tel">+38 099 213-95-55<br><span style="font-size: 12px">(Viber, WhatsApp)</span></p>
+                                <!--<p class="viber-whatsapp"><span>(Viber, WhatsApp)</span> +38 099 213-95-55</p>-->
 
                                 <p class="team-mail">coralborispol@gmail.com</p>
 
@@ -176,8 +176,8 @@
                             <div class="team-info">
                                 <h3>Легкая Людмила</h3>
 
-                                <p class="team-tel">+38 099 213-95-55</p>
-                                <p class="viber-whatsapp"><span>(Viber, WhatsApp)</span> +38 099 213-95-55</p>
+                                <p class="team-tel">+38 099 213-95-55<br><span style="font-size: 12px">(Viber, WhatsApp)</span></p>
+                                <!--<p class="viber-whatsapp"><span>(Viber, WhatsApp)</span> +38 099 213-95-55</p>-->
 
                                 <p class="team-mail">coralborispol@gmail.com</p>
 
@@ -194,8 +194,8 @@
                             <div class="team-info">
                                 <h3>Тютюн Анна</h3>
 
-                                <p class="team-tel">+38 099 213-95-55 </p>
-                                <p class="viber-whatsapp"><span>(Viber, WhatsApp)</span> +38 099 213-95-55</p>
+                                <p class="team-tel">+38 099 213-95-55<br><span style="font-size: 12px">(Viber, WhatsApp)</span></p>
+                                <!--<p class="viber-whatsapp"><span>(Viber, WhatsApp)</span> +38 099 213-95-55</p>-->
 
                                 <p class="team-mail">coralborispol@gmail.com </p>
 
