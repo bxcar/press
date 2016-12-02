@@ -60,7 +60,7 @@
                 <p class="team-tel">+38 099 213-95-55<br><span style="font-size: 12px">(Viber, WhatsApp)</span></p>
                 <!--<p class="viber-whatsapp"><span>(Viber, WhatsApp)</span> +38 099 213-95-55</p>-->
 
-                <p class="team-mail">coralborispol@gmail.com</p>
+                <p class="team-mail">info@coralborispol.com</p>
 
 
                 <p class="team-year">7 лет в туризме</p>
@@ -80,7 +80,7 @@
                 <p class="team-tel">+38 099 213-95-55<br><span style="font-size: 12px">(Viber, WhatsApp)</span></p>
                 <!--<p class="viber-whatsapp"><span>(Viber, WhatsApp)</span> +38 099 213-95-55</p>-->
 
-                <p class="team-mail">coralborispol@gmail.com</p>
+                <p class="team-mail">info@coralborispol.com</p>
 
                 <p class="team-year">12 лет в туризме</p>
 
@@ -98,7 +98,7 @@
                 <p class="team-tel">+38 099 213-95-55<br><span style="font-size: 12px">(Viber, WhatsApp)</span></p>
                 <!--<p class="viber-whatsapp"><span>(Viber, WhatsApp)</span> +38 099 213-95-55</p>-->
 
-                <p class="team-mail">coralborispol@gmail.com </p>
+                <p class="team-mail">info@coralborispol.com </p>
 
                 <p class="team-year">6 лет в туризме</p>
 
@@ -232,7 +232,7 @@
 
         <p class="f-text2 box">г.&nbsp;Борисполь, <br/>
             ул.&nbsp;Киевский шлях, 2/6, <br/>ТРЦ «АЕРОМОЛ»<br>
-            <span>e-mail:</span> coralborispol@gmail.com</p>
+            <span>e-mail:</span> info@coralborispol.com</p>
 
         <p class="f-text3 box">
             <a class="popmake-158 modal-link" href="#">Соглашение об обработке персональных данных.</a><br/>

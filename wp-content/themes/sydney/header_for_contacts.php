@@ -94,7 +94,7 @@
                                 <span class="contacts-telephone">099 213-95-55<span class="viber-in-contacts"> (Viber, WhatsApp)</span></span><br>
                                 <span class="contacts-telephone">098 116 95 55</span><br></strong>
                             <span>Электронная почта:</span><br>
-                            <strong>coralborispol@gmail.com</strong>
+                            <strong>info@coralborispol.com</strong>
                         </p>
                     </div>
                     <div class="contacts-map-right" style="display: inline-block; vertical-align: top;">
@@ -113,7 +113,7 @@
                                 <p class="team-tel">+38 099 213-95-55<br><span style="font-size: 12px">(Viber, WhatsApp)</span></p>
                                 <!--<p class="viber-whatsapp"><span>(Viber, WhatsApp)</span> +38 099 213-95-55</p>-->
 
-                                <p class="team-mail">coralborispol@gmail.com</p>
+                                <p class="team-mail">info@coralborispol.com</p>
 
 
                                 <p class="team-year">7 лет в туризме</p>
@@ -133,7 +133,7 @@
                                 <p class="team-tel">+38 099 213-95-55<br><span style="font-size: 12px">(Viber, WhatsApp)</span></p>
                                 <!--<p class="viber-whatsapp"><span>(Viber, WhatsApp)</span> +38 099 213-95-55</p>-->
 
-                                <p class="team-mail">coralborispol@gmail.com</p>
+                                <p class="team-mail">info@coralborispol.com</p>
 
                                 <p class="team-year">12 лет в туризме</p>
 
@@ -151,7 +151,7 @@
                                 <p class="team-tel">+38 099 213-95-55<br><span style="font-size: 12px">(Viber, WhatsApp)</span></p>
                                 <!--<p class="viber-whatsapp"><span>(Viber, WhatsApp)</span> +38 099 213-95-55</p>-->
 
-                                <p class="team-mail">coralborispol@gmail.com </p>
+                                <p class="team-mail">info@coralborispol.com </p>
 
                                 <p class="team-year">6 лет в туризме</p>
 

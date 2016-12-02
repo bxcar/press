@@ -35,7 +35,7 @@
 
         <p class="f-text2 box">г.&nbsp;Борисполь, <br/>
             ул.&nbsp;Киевский шлях, 2/6, <br/>ТРЦ «АЕРОМОЛ»<br>
-            <span>e-mail:</span> coralborispol@gmail.com</p>
+            <span>e-mail:</span> info@coralborispol.com</p>
 
         <p class="f-text3 box">
             <a class="popmake-158 modal-link" href="#">Соглашение об обработке персональных данных.</a><br />

@@ -17,25 +17,6 @@ $_SESSION['urli'] = $_SERVER['HTTP_REFERER'];
 <html <?php language_attributes(); ?>>
 <head>
     <script src="/wp-content/themes/sydney/js/script_for_form_button.js"></script>
-    <!--    <link rel="stylesheet" href="/wp-content/themes/sydney/fancybox/jquery.fancybox.css"  />-->
-    <!--    <link rel="icon" href="/lp/ru/img/favicon.ico" type="image/x-icon">-->
-    <!--    <link rel="shortcut icon" href="/lp/ru/img/favicon.ico" type="image/x-icon">-->
-    <!---->
-    <!---->
-    <!--    <!--[if lt IE 10]>-->
-    <!--    <script src="/wp-content/themes/sydney/js/html5shiv.js"></script>-->
-    <!--    <p class="browsehappy">Вы используете <strong>устаревший</strong> браузер. Пожалуйста, <a href="http://browsehappy.com/" target="_blank">обновите свой браузер,</a> чтобы улучшить отображение сайта.</p>-->
-    <!--    <![endif]-->
-    <!---->
-    <!--    <script type="text/javascript" src="/wp-content/themes/sydney/js/lib/jquery-1.8.0.min.js"></script>-->
-    <!--    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>-->
-    <!---->
-    <!--    <script type="text/javascript" src="/wp-content/themes/sydney/fancybox/jquery.fancybox.pack.js"></script>-->
-    <!--    <script type="text/javascript" src="/wp-content/themes/sydney/js/lib/jquery.cookie.js"></script>-->
-    <!---->
-    <!--    <script src="/wp-content/themes/sydney/js/jquery.maskedinput.min.js"></script>-->
-    <!--<!--    <script src="/wp-content/themes/sydney/js/scripts1.js"></script>-->
-    <!--    <script src="/wp-content/themes/sydney/js/multi.js"></script>-->
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="profile" href="http://gmpg.org/xfn/11">
@@ -61,11 +42,6 @@ $_SESSION['urli'] = $_SERVER['HTTP_REFERER'];
 <?php include "tracking_codes_and_jivosite/google-analytics.php" ?>
 <?php include "tracking_codes_and_jivosite/yandex-metrica.php" ?>
 
-<!--<script type="text/javascript">
-    jQuery(document).ready(function () {
-        jQuery('a[rel="fancybox"]').fancybox();
-    });
-</script>-->
 <div class="preloader">
     <div class="spinner">
         <div class="pre-bounce1"></div>
@@ -97,8 +73,6 @@ $_SESSION['urli'] = $_SERVER['HTTP_REFERER'];
                         </nav><!-- #site-navigation -->
                     </div>
                     <div class="col-md-8 col-sm-4 col-xs-12 header-number">
-                        <!--<img src="/wp-content/themes/sydney/img/telephone_not_fill.png" width="30" height="30"
-                             style="width: 21px; height: 21px; float: left; margin-right: 10px;">-->
                         <p <!--style="overflow: hidden;-->">098 11 69 555<br><a href="#"><span class="popmake-522 header-number-text">Закажите&nbsp;обратный&nbsp;звонок</span></a></p>
                     </div>
                 </div>
