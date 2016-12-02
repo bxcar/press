@@ -22,49 +22,17 @@
     <?php endif; ?>
 
     <?php wp_head(); ?>
-    <!-- Facebook Pixel Code -->
 
-    <script>
-
-        !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-
-            n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-
-            n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-
-            t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-
-            document,'script','https://connect.facebook.net/en_US/fbevents.js');
-
-
-        fbq('init', '129477284107022', {
-
-            em: 'insert_email_variable,'
-
-        });
-
-        fbq('track', 'PageView');
-
-    </script>
-
-    <noscript><img height="1" width="1" style="display:none"
-
-                   src="https://www.facebook.com/tr?id=129477284107022&ev=PageView&noscript=1"
-
-        /></noscript>
-
-    <!-- DO NOT MODIFY -->
-
-    <!-- End Facebook Pixel Code -->
-    <script type="text/javascript">(window.Image ? (new Image()) : document.createElement('img')).src = location.protocol + '//vk.com/rtrg?r=YPPjOWo3CY79Vp3dG/2LKb9ul5NNNp4zRKtkOZO7MwRNLgp9pJLjU9mfdQqcRcFRvtyMVaPuyNTIIDimgFy38jpNW3m2o6si1YQVNDfHaGESE1eWn45kqsmnYQ3mFH/wla6Qsh*a*RZ6MlJ0u5FbVMnNY1CxrfjvZgxtEMaqMrE-&pixel_id=1000045496';</script>
-    <!-- BEGIN JIVOSITE CODE {literal} -->
-    <script type='text/javascript'>
-        (function(){ var widget_id = 'c1yVYkheNi';var d=document;var w=window;function l(){
-            var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = '//code.jivosite.com/script/widget/'+widget_id; var ss = document.getElementsByTagName('script')[0]; ss.parentNode.insertBefore(s, ss);}if(d.readyState=='complete'){l();}else{if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();</script>
-    <!-- {/literal} END JIVOSITE CODE -->
+    <?php include "tracking_codes_and_jivosite/vk.php" ?>
+    <?php include "tracking_codes_and_jivosite/facebook_pixel_code.php" ?>
+    <?php include "tracking_codes_and_jivosite/jivosite.php" ?>
 </head>
 
 <body <?php body_class(); ?>>
+<?php include "tracking_codes_and_jivosite/google-analytics.php" ?>
+<?php include "tracking_codes_and_jivosite/yandex-metrica.php" ?>
+
+
 <div class="preloader">
     <div class="spinner">
         <div class="pre-bounce1"></div>
