@@ -11,11 +11,14 @@ session_start();
 /*$_SERVER['HTTP_REFERER']*/
 //    echo "$url";
 $_SESSION['urli'] = $_SERVER['HTTP_REFERER'];
+$GLOBALS["foo"] = $_SESSION['urli'];
 //echo $_SERVER['HTTP_REFERER'];
 //    echo $_SESSION['urli'];
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
+    <title>Coral Travel - г. Борисполь</title>
+    <meta name="description" content="Горящие туры в Египет, Таиланд и другие страны">
     <script src="/wp-content/themes/sydney/js/script_for_form_button.js"></script>
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -57,7 +60,7 @@ $_SESSION['urli'] = $_SERVER['HTTP_REFERER'];
                 <div class="row">
                     <div class="col-md-4 col-sm-8 col-xs-12  header-logo">
                         <?php if (get_theme_mod('site_logo')) : ?>
-                            <a href="<?php echo esc_url(home_url('/')); ?>" title="<?php bloginfo('name'); ?>"><img
+                            <a<!-- href="--><?php /*//echo esc_url(home_url('/')); */?>" title="<?php bloginfo('name'); ?>"><img
                                     class="site-logo" src="<?php echo esc_url(get_theme_mod('site_logo')); ?>"
                                     alt="<?php bloginfo('name'); ?>"/></a>
                         <?php else : ?>

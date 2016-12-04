@@ -188,7 +188,9 @@
                         </div>
                     </aside>
                 </div>
+<h2 class="header-bottom-form social-widgets-header">Присоединяйтесь к нам в социальных сетях!</h2>
             </div>
+            
             <div class="soc-widget-all">
                 <script type="text/javascript" src="//vk.com/js/api/openapi.js?136"></script>
 
@@ -197,9 +199,9 @@
                      class="soc-widget" id="vk_groups"></div>
                 <script type="text/javascript">
                     VK.Widgets.Group("vk_groups", {
-                        mode: 4,
+                        mode: 0,
                         width: "350",
-                        height: "500",
+                        height: "400",
                         color1: '0093D0',
                         color2: 'FFFFFF',
                         color3: 'FFFFFF'
@@ -208,7 +210,7 @@
 
                 <iframe
                     src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fborispol.coraltravel%2F&tabs=timeline&width=350&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
-                    width="350" height="500" style="border:none;/*overflow:hidden;*/" scrolling="no" frameborder="0"
+                    width="350" height="400" style="border:none;/*overflow:hidden;*/z-index: 100;" scrolling="no" frameborder="0"
                     allowTransparency="true"></iframe>
             </div>
         </div>

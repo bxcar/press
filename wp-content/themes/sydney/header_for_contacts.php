@@ -9,6 +9,8 @@
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
+    <title>Coral Travel - г. Борисполь</title>
+    <meta name="description" content="Горящие туры в Египет, Таиланд и другие страны">
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="profile" href="http://gmpg.org/xfn/11">

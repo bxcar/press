@@ -10,6 +10,8 @@ session_start();
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
+    <title>Coral Travel - г. Борисполь</title>
+    <meta name="description" content="Горящие туры в Египет, Таиланд и другие страны">
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="profile" href="http://gmpg.org/xfn/11">
@@ -80,8 +82,8 @@ session_start();
             <div class="row">
 
                 <?php
-                //$sendto  = 'seo@makintour.com, coralborispol@gmail.com'; //Адреса, куда будут приходить письма shakrov@ukr.net, seo@makintour.com
-                $sendto = 'malanchukdima@mail.ru'; //Адреса, куда будут приходить письма
+                $sendto  = 'malanchukdima@mail.ru'; //Адреса, куда будут приходить письма shakrov@ukr.net, seo@makintour.com
+                //$sendto = 'seo@makintour.com, info@coralborispol.com'; //Адреса, куда будут приходить письма
 
                 $phone = $_POST['tel-564'];
                 $name = $_POST['your-name'];
@@ -92,7 +94,7 @@ session_start();
                     . trim(strip_tags($_POST['order'], '<br>'));
 
 //                global $urli;
-                $url =  $_SESSION['urli'];
+                $url =  $_SERVER['HTTP_REFERER'];
 
                     // Формирование заголовка письма
 

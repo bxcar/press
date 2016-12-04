@@ -17,7 +17,7 @@ Sydney is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic,
 /*--------------------------------------------------------------
 Social
 --------------------------------------------------------------*/
-@import "/wp-content/themes/maintheme/fonts/stylesheet.css";
+@import "/wp-content/themes/sydney/fonts/stylesheet.css";
 
 .for-slider-exc {
     max-width: 1000px;
@@ -1671,6 +1671,38 @@ Blog
     width: 100%;
     height: 60%;
 }
+.content-area .entry-thumb .discount-image {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    right: 0;
+    top: 0;
+}
+
+.content-area .entry-thumb ul {
+    margin-bottom: 0 !important;
+}
+
+.content-area .entry-thumb .discount-amount {
+    display: inline-block;
+    position: absolute;
+    font-size: 24px;
+    /*font-family: 'Open Sans', sans-serif;*/
+    right: 4%;
+    top: 8%;
+    z-index: 100;
+    color: #fff;
+    -moz-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    -ms-transform: rotate(45deg); /* для IE9 */
+    transform: rotate(45deg); /* на будущее */
+}
+
+/*.content-area .entry-thumb img:after {
+    display: block;
+    background: url("img/discount.png");
+}*/
 
 .hentry .title-post {
     font-size: 20px;
@@ -3898,7 +3930,8 @@ input[type="color"]:focus {
 }
 @media only screen and (max-width: 991px) {
     .soc-widget-all {
-        width: 48% !important;
+        /*width: 48% !important;*/
+        width: 350px !important;
     }
     #vk_groups {
         float: left !important;
@@ -4228,6 +4261,9 @@ input[type="color"]:focus {
 
 /* All Mobile Sizes */
 @media only screen and (max-width: 767px) {
+    .social-widgets-header {
+       margin-bottom: 50px !important;
+    }
 
     #facebook {
         overflow: visible !important;
@@ -5008,7 +5044,8 @@ input[type="color"]:focus {
 /* Mobile Portrait Size */
 @media only screen and (max-width: 600px) {
     .soc-widget-all {
-        width: 75% !important;
+        /*width: 75% !important;*/
+        width: 350px !important;
     }
 
     .soc-widget-all #facebook body{
@@ -5040,8 +5077,18 @@ input[type="color"]:focus {
 }
 
 @media only screen and (max-width: 479px) {
+    .content-area .entry-thumb .discount-image {
+        width: 70px;
+        height: 70px;
+    }
+
+    .content-area .entry-thumb .discount-amount {
+        font-size: 18px;
+        right: 3%;
+        top: 6%;
+    }
     #vk_groups {
-        margin-left: -40px;
+        /*margin-left: -40px;*/
         overflow: hidden;
     }
 
@@ -5109,8 +5156,8 @@ input[type="color"]:focus {
     }
 
     .page .page-wrap .content-wrapper {
-        padding-left: 10px !important;
-        padding-right: 10px !important;
+        /*padding-left: 10px !important;
+        padding-right: 10px !important;*/
     }
 
     .form-descr {
@@ -6748,4 +6795,9 @@ a.back-to-main1 {
 
 .soc-widget-all {
     width: 75%; margin-left: auto; margin-right: auto;
+    /*width: 350px !important;*/
+}
+
+#slideshow {
+   max-height: 1080px !important;
 }

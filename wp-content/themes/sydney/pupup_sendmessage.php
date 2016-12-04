@@ -1,6 +1,5 @@
 <?php
-//$sendto  = 'seo@makintour.com, coralborispol@gmail.com'; //Адреса, куда будут приходить письма
-$sendto = 'malanchukdima@mail.ru'; //Адреса, куда будут приходить письма
+$sendto  = 'seo@makintour.com,  info@coralborispol.com'; //Адреса, куда будут приходить письма
 
 $phone = $_POST['tel-564'];
 $name = $_POST['your-name'];

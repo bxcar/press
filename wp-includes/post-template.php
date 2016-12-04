@@ -1013,7 +1013,9 @@ function the_meta() {
 			 * @param string $key   Meta key.
 			 * @param string $value Meta value.
 			 */
-			echo apply_filters( 'the_meta_key', "<li><span class='post-meta-key'>$key:</span> $value</li>\n", $key, $value );
+			echo "<img class=\"discount-image\" src=\"/wp-content/themes/sydney/img/discount.png\">";
+			echo "<span class=\"discount-amount\">$value</span>";
+			//echo apply_filters( 'the_meta_key', "<li><span class='post-meta-key'>$key:</span> $value</li>\n", $key, $value );
 		}
 		echo "</ul>\n";
 	}
