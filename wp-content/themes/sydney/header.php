@@ -1,4 +1,5 @@
 <?php
+session_start();
 /**
  * The header for our theme.
  *
@@ -6,14 +7,10 @@
  *
  * @package Sydney
  */
-//$GLOBALS["foo"] = $_SERVER['HTTP_REFERER'];
-session_start();
 /*$_SERVER['HTTP_REFERER']*/
-//    echo "$url";
-$_SESSION['urli'] = $_SERVER['HTTP_REFERER'];
-$GLOBALS["foo"] = $_SESSION['urli'];
-//echo $_SERVER['HTTP_REFERER'];
-//    echo $_SESSION['urli'];
+if(!$_SESSION['urli']) {
+    $_SESSION['urli'] = $_SERVER['REQUEST_URI'];
+}
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>

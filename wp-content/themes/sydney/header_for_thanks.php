@@ -1,4 +1,5 @@
 <?php
+session_start();
 /**
  * The header for our theme.
  *
@@ -6,7 +7,6 @@
  *
  * @package Sydney
  */
-session_start();
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -94,7 +94,7 @@ session_start();
                     . trim(strip_tags($_POST['order'], '<br>'));
 
 //                global $urli;
-                $url =  $_SERVER['HTTP_REFERER'];
+                $url =  'http://'.$_SERVER['HTTP_HOST'].$_SESSION['urli'];
 
                     // Формирование заголовка письма
 

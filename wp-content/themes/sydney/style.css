@@ -3609,7 +3609,7 @@ input[type="color"]:focus {
 }
 
 .content-area .hentry:after {
-    background-color: #d65050;
+    /*background-color: #d65050;*/
 }
 
 .hentry .meta-post a:hover {
@@ -3929,6 +3929,16 @@ input[type="color"]:focus {
    }
 }
 @media only screen and (max-width: 991px) {
+    .content-area .entry-thumb .discount-image {
+        width: 140px;
+        height: 140px;
+    }
+
+    .content-area .entry-thumb .discount-amount {
+        font-size: 34px;
+        right: 3%;
+        top: 9%;
+    }
     .soc-widget-all {
         /*width: 48% !important;*/
         width: 350px !important;
@@ -4261,6 +4271,16 @@ input[type="color"]:focus {
 
 /* All Mobile Sizes */
 @media only screen and (max-width: 767px) {
+    .content-area .entry-thumb .discount-image {
+        width: 100px;
+        height: 100px;
+    }
+
+    .content-area .entry-thumb .discount-amount {
+        font-size: 24px;
+        right: 4%;
+        top: 8%;
+    }
     .social-widgets-header {
        margin-bottom: 50px !important;
     }
