@@ -263,5 +263,14 @@ jQuery(document).ready(function(){
 	jQuery(".wpcr3_aggregateRating_overallText").css("font-family", "'Open-Sans', sans-serif").css("font-weight", "300").css("font-size", "12px");
 	jQuery(".wpcr3_item_name").css("font-family", "'Open-Sans', sans-serif").css("font-weight", "300").css("font-size", "12px");
 	jQuery(".wpcr3_admin_response").css("font-family", "'Open-Sans', sans-serif").css("color", "#0073d0");
+	jQuery(".wpcr3_review_author").css("font-size", "0");
+	jQuery(".wpcr3_caps").css("font-size", "12px");
 
+	// replace_name.split('on').join('прошел');
+
+	var replace_month = jQuery(".wpcr3_review_datePublished").html();
+	var replaced_month = replace_month.replace('Dec','Дек')
+		.replace('Jan','Янв')
+		.replace('Feb','Фев');
+	jQuery(".wpcr3_review_datePublished").html(replaced_month);
 });
