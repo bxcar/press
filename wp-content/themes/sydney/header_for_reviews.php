@@ -77,10 +77,10 @@
     <?php sydney_slider_template(); ?>
 
     <div class="header-image header-image-reviews">
-        <p class="header-on-top-image"></p>
+        <p class="header-on-top-image"><span class="header-inner">Отзывы</span><!--<img style="width: 12%; height: 12%; margin-top: -5%;" src="/wp-content/themes/sydney/images/reviews_little.png">--></p>
 <!--        --><?php //sydney_header_overlay(); ?>
         <div class="overlay-reviews"></div>
-        <img class="header-inner" src="/wp-content/themes/sydney/images/reviews.png"
+        <img class="header-inner" src="/wp-content/themes/sydney/images/reviews-mobile.png"
              width="<?php echo esc_attr(get_custom_header()->width); ?>" alt="<?php bloginfo('name'); ?>">
     </div>
 

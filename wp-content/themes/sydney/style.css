@@ -879,7 +879,7 @@ Header
     background-image: url("/wp-content/themes/sydney/img/about-header.jpg") !important;
 }
 .header-image-reviews {
-    background-image: url("/wp-content/themes/sydney/images/reviews.png") !important;
+    background-image: url("/wp-content/themes/sydney/images/reviews-new.png") !important;
 }
 
 .header-inner {
@@ -3952,6 +3952,9 @@ input[type="color"]:focus {
    }
 }
 @media only screen and (max-width: 991px) {
+    .header-image-reviews {
+        background-image: url("/wp-content/themes/sydney/images/reviews-mobile.png") !important;
+    }
     .content-area .entry-thumb .discount-image {
         width: 140px;
         height: 140px;
