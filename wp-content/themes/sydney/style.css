@@ -878,6 +878,9 @@ Header
 .header-image-contacts {
     background-image: url("/wp-content/themes/sydney/img/about-header.jpg") !important;
 }
+.header-image-reviews {
+    background-image: url("/wp-content/themes/sydney/images/reviews.png") !important;
+}
 
 .header-inner {
     display: none;
@@ -1355,6 +1358,18 @@ Layout
     /*background-color: #08b4da !important;*/
     filter: alpha(opacity=70);
     opacity: 0.7;
+}
+
+.overlay-reviews {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+    background-color: black !important;
+    filter: alpha(opacity=0);
+    opacity: 0;
 }
 
 .overlay-main {
@@ -2448,6 +2463,9 @@ Panels
 }
 
 .panel-grid .overlay {
+    z-index: -1;
+}
+.panel-grid .overlay-reviews {
     z-index: -1;
 }
 
@@ -3609,7 +3627,7 @@ input[type="color"]:focus {
 }
 
 .content-area .hentry:after {
-    background-color: #d65050;
+    /*background-color: #d65050;*/
 }
 
 .hentry .meta-post a:hover {
@@ -3773,6 +3791,11 @@ input[type="color"]:focus {
     #popmake-522 {
         width: 451px !important;
     }
+    
+    #popmake-871 {
+       width: 810px !important; 
+    }
+ 
 }
 
 @media only screen and (min-width: 1100px) {
@@ -3825,7 +3848,7 @@ input[type="color"]:focus {
     #popmake-599,
     #popmake-597,
     #popmake-508,
-    #popmake-522 {
+    #popmake-522, {
         width: 40% !important;
     }
     .header-number-text {
@@ -3929,6 +3952,16 @@ input[type="color"]:focus {
    }
 }
 @media only screen and (max-width: 991px) {
+    .content-area .entry-thumb .discount-image {
+        width: 140px;
+        height: 140px;
+    }
+
+    .content-area .entry-thumb .discount-amount {
+        font-size: 34px;
+        right: 3%;
+        top: 9%;
+    }
     .soc-widget-all {
         /*width: 48% !important;*/
         width: 350px !important;
@@ -4261,6 +4294,16 @@ input[type="color"]:focus {
 
 /* All Mobile Sizes */
 @media only screen and (max-width: 767px) {
+    .content-area .entry-thumb .discount-image {
+        width: 100px;
+        height: 100px;
+    }
+
+    .content-area .entry-thumb .discount-amount {
+        font-size: 24px;
+        right: 4%;
+        top: 8%;
+    }
     .social-widgets-header {
        margin-bottom: 50px !important;
     }
@@ -6472,7 +6515,8 @@ p {
 #popmake-522,
 #popmake-515,
 #popmake-166,
-#popmake-158
+#popmake-158,
+#popmake-871
 {
     overflow: visible !important;
 }

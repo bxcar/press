@@ -1,4 +1,5 @@
 <?php
+session_start();
 /**
  * The header for our theme.
  *
@@ -6,12 +7,11 @@
  *
  * @package Sydney
  */
-session_start();
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
-    <title>Coral Travel - г. Борисполь</title>
-    <meta name="description" content="Горящие туры в Египет, Таиланд и другие страны">
+    <title>Coral Travel - г. Борисполь, ТРЦ АЭРОМОЛЛ</title>
+    <meta name="description" content="Страница благодарности посетителям сайта за проявленное желание сотрудничать">
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="profile" href="http://gmpg.org/xfn/11">
@@ -82,8 +82,8 @@ session_start();
             <div class="row">
 
                 <?php
-                $sendto  = 'malanchukdima@mail.ru'; //Адреса, куда будут приходить письма shakrov@ukr.net, seo@makintour.com
-                //$sendto = 'seo@makintour.com, info@coralborispol.com'; //Адреса, куда будут приходить письма
+                //$sendto  = 'malanchukdima@mail.ru'; //Адреса, куда будут приходить письма shakrov@ukr.net, seo@makintour.com
+                $sendto = 'seo@makintour.com, info@coralborispol.com'; //Адреса, куда будут приходить письма
 
                 $phone = $_POST['tel-564'];
                 $name = $_POST['your-name'];
@@ -94,7 +94,7 @@ session_start();
                     . trim(strip_tags($_POST['order'], '<br>'));
 
 //                global $urli;
-                $url =  $_SERVER['HTTP_REFERER'];
+                $url =  'http://'.$_SERVER['HTTP_HOST'].$_SESSION['urli'];
 
                     // Формирование заголовка письма
 
@@ -161,6 +161,26 @@ session_start();
                     </div>
                 </div>";
                 }
+                ?>
+
+                <?php
+                if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                    $curl = curl_init();
+                    curl_setopt_array($curl, array(
+                        CURLOPT_RETURNTRANSFER => true,
+                        CURLOPT_URL =>
+                            'http://api.u-on.ru/4z9lLpPG35d4M8UEd9pu/lead/create.json',
+                        CURLOPT_POST => true,
+                        CURLOPT_POSTFIELDS =>
+                            'source='.urlencode('ОНЛАЙН: "Coral Бориспіль"').
+                            '&u_name='.urlencode($_POST['your-name']).
+                            '&u_phone='.urlencode($_POST['tel-564']).
+                            '&note='.urlencode($url)."\n".urlencode($_POST['your-message'])
+                    ));
+                    $resp = curl_exec($curl);
+                    curl_close($curl);
+                }
+                /*."  ".urlencode($p)*/
                 ?>
 
 

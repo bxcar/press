@@ -9,8 +9,8 @@
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
-    <title>Coral Travel - г. Борисполь</title>
-    <meta name="description" content="Горящие туры в Египет, Таиланд и другие страны">
+    <title>Спецпредложения - Coral Travel (Борисполь)</title>
+    <meta name="description" content="Специальные предложения на отдых для одного, для двоих, для всей семьи от Coral Travel в Борисполе">
     <script src="/wp-content/themes/sydney/js/script_for_form_button_footer.js"></script>
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">

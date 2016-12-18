@@ -1,4 +1,5 @@
 <?php
+session_start();
 /**
  * The header for our theme.
  *
@@ -6,19 +7,37 @@
  *
  * @package Sydney
  */
-//$GLOBALS["foo"] = $_SERVER['HTTP_REFERER'];
-session_start();
 /*$_SERVER['HTTP_REFERER']*/
-//    echo "$url";
-$_SESSION['urli'] = $_SERVER['HTTP_REFERER'];
-$GLOBALS["foo"] = $_SESSION['urli'];
-//echo $_SERVER['HTTP_REFERER'];
-//    echo $_SESSION['urli'];
+if(!$_SESSION['urli']) {
+    $_SESSION['urli'] = $_SERVER['REQUEST_URI'];
+}
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
-    <title>Coral Travel - г. Борисполь</title>
-    <meta name="description" content="Горящие туры в Египет, Таиланд и другие страны">
+    <title>Горящие туры в Борисполе - Coral Travel</title>
+   
+
+    <!--<meta property="og:type" content="article" />-->
+    <meta property="og:title" content="Горящие туры в Борисполе - Coral Travel" />
+    <meta property="og:description" content="Самые выгодные цены от надежной компании" />
+    <meta property="og:url" content="http://coralborispol.com" />
+    <meta property="og:image" content="http://coralborispol.com/wp-content/themes/sydney/img/sharelink_1200x630adapt.png" />
+    
+<!--<meta property=og:url content="http://work.makintour.com">-->
+<!--<meta property="og:title" content="Работа для менеджера по туризму">-->
+<!--<meta property="og:description" content="Любите туризм и хотите работать в этой сфере Присоединяйтесь к команде профессионалов!">-->
+<!--<meta property="og:type" content="website">-->
+<!--<meta property="og:image" content="imagestild6131-6236-4936-b266-356133316465__en_logo_sqare2_wide_canvas.png">-->
+<!--<meta property="fb:app_id" content="257953674358265">-->
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@">
+    <meta name="twitter:title" content="Работа для менеджера по туризму">
+    <meta name="twitter:description" content="Любите туризм и хотите работать в этой сфере Присоединяйтесь к команде профессионалов!">
+    <meta name="twitter:image" content="imagestild6131-6236-4936-b266-356133316465__en_logo_sqare2_wide_canvas.png">
+
+
+    <meta name="description" content="ТРЦ АЭРОМОЛЛ - бронирование тура, авиаперелеты, экскурсионные туры из Борисполя. Гарантия надежности!">
     <script src="/wp-content/themes/sydney/js/script_for_form_button.js"></script>
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">

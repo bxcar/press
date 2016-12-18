@@ -9,8 +9,8 @@
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
-    <title>Coral Travel - г. Борисполь</title>
-    <meta name="description" content="Горящие туры в Египет, Таиланд и другие страны">
+    <title>Контакты - Coral Travel (Борисполь)</title>
+    <meta name="description" content="Звоните нам сейчас: 098 1169 555. Адрес: г. Борисполь ул. Киевский шлях, 2/6, ТРЦ АЭРОМОЛЛ">
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="profile" href="http://gmpg.org/xfn/11">

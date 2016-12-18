@@ -1,0 +1,5 @@
+https://vk.com/dev/pages.clearCache  510x228
+https://developers.facebook.com/tools/debug/og/object/ 476x249
+
+additional information
+https://developers.facebook.com/docs/sharing/best-practices
