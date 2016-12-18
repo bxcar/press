@@ -78,18 +78,18 @@ wpcr3.submit = function(e) {
 	if (submit.hasClass('wpcr3_disabled')) { return false; }
 	
 	if (wpcr3.mousemove_total <= wpcr3.mousemove_need || wpcr3.keypress_total <= wpcr3.keypress_need) {
-		alert('You did not pass our human detection check. Code '+wpcr3.mousemove_total+','+wpcr3.keypress_total);
+		alert('Заполните все необходимые поля и отметьте галочку.'); //Код '+wpcr3.mousemove_total+','+wpcr3.keypress_total
 		return false;
 	}
 	
 	var c1_fail = (c1.is(':checked') === true), c2_fail = (c2.is(':checked') === false), c3_fail = (c3.is(':checked') === false);
 	var fake_fail = (fake_website.val().length > 0);
 	if (c1_fail || c3_fail || fake_fail) {
-		alert('You did not pass our bot detection check. Code '+c1_fail+','+c3_fail+','+fake_fail);
+		alert('Заполните все необходимые поля и отметьте галочку.');  /*Код '+c1_fail+','+c3_fail+','+fake_fail*/
 		return false;
 	}
 	if (c2_fail) {
-		alert('You must check the box to confirm you are human.');
+		alert('Поставьте галочку, чтобы подтвердить что вы человек.');
 		return false;
 	}
 	
@@ -101,7 +101,7 @@ wpcr3.submit = function(e) {
 		if (v.hasClass('wpcr3_required') && $.trim(v.val()).length === 0) {
 			var label = div2.find('label[for="'+v.attr('id')+'"]'), err = '';
 			if (label.length) {
-				err = $.trim(label.text().replace(':',''))+' is required.';
+				err = $.trim(label.text().replace(':',''))+' - обязательное поле.';
 			} else {
 				err = 'A required field has not been filled out.';
 			}
@@ -133,7 +133,7 @@ wpcr3.submit = function(e) {
 	wpcr3.ajaxPost(parent, ajaxData, function(err, rtn) {
 		if (err) { return; }
 		
-		alert('Thank you! Your review has been received and will be posted soon.');
+		alert('Спасибо! Ваш отзыв отправлен и в скором времени появится на нашем сайте.');
 		$(window).scrollTop(0);
 		wpcr3.clearFields();
 		parent.find(".wpcr3_cancel_btn").click();
@@ -224,4 +224,44 @@ wpcr3.init = function() {
 
 jQuery(function() {
 	wpcr3.init();
+});
+
+jQuery(document).ready(function(){
+	jQuery(".wpcr3_leave_text").text('Напишите ваш отзыв здесь:');
+	jQuery("div.wpcr3_button_1.wpcr3_show_btn").text('Оставить отзыв'); //Submit your review
+	jQuery(".wpcr3_review_form_rating_field label.comment-field").text('Ваша оценка'); //Star lable
+	jQuery(".wpcr3_review_form_review_field_label label.comment-field").text('Ваш отзыв'); //Review Box
+	//jQuery(".wpcr3_check_confirm label").text('123');
+	//Checkbox for confirmation
+	jQuery("div.wpcr3_button_1.wpcr3_submit_btn").text('Отправить отзыв'); //Submit button
+	jQuery("div.wpcr3_button_1.wpcr3_cancel_btn").text('Отмена'); //Cancel button
+	jQuery("span.wpcr3_aggregateRating_overallText").text('Общая оценка'); //Avarage rating
+	jQuery("span.wpcr3_aggregateRating_reviewCount").text(''); //Number of reviews lable
+	jQuery(".wpcr3_respond_2 .wpcr3_check_confirm label").html('<input type="checkbox" name="wpcr3_fconfirm2" class="wpcr3_fconfirm2" value="1" />&nbsp; Отметьте галочку, чтобы подтвердить что вы человек.'); //Number of reviews lable
+	jQuery("div.wpcr3_review blockquote.wpcr3_content").css('border-color', '#0093d0');
+	var button_style = {
+		"color":"#fff",
+		"background":"#0088e7",
+		"border-color":"#0088e7",
+		"transition":"all 0.3s"
+	};
+	var button_style_hover = {
+		"color":"#0088e7",
+		"background":"#fff",
+		"border-color":"#0088e7",
+		"transition":"all 0.3s"
+	};
+
+	jQuery(".wpcr3_button_1").hover(function() {
+		$( this ).css(button_style_hover);
+	}, function() {
+		$( this ).css(button_style);
+	}).css(button_style_hover);
+	jQuery(".wpcr3_button_1").css(button_style);
+	jQuery(".wpcr3_respond_2 label").css("font-family", "'Open-Sans', sans-serif").css("font-weight", "300");
+	jQuery(".wpcr3_leave_text").css("font-family", "'Open-Sans', sans-serif").css("font-weight", "300").css("font-size", "12px");
+	jQuery(".wpcr3_aggregateRating_overallText").css("font-family", "'Open-Sans', sans-serif").css("font-weight", "300").css("font-size", "12px");
+	jQuery(".wpcr3_item_name").css("font-family", "'Open-Sans', sans-serif").css("font-weight", "300").css("font-size", "12px");
+	jQuery(".wpcr3_admin_response").css("font-family", "'Open-Sans', sans-serif").css("color", "#0073d0");
+
 });
