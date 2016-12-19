@@ -17,7 +17,7 @@ if(!$_SESSION['urli']) {
     <title>Горящие туры в Борисполе - Coral Travel</title>
    
 
-    <!--<meta property="og:type" content="article" />-->
+    <meta property="og:type" content="website" />
     <meta property="og:title" content="Горящие туры в Борисполе - Coral Travel" />
     <meta property="og:description" content="Самые выгодные цены от надежной компании" />
     <meta property="og:url" content="http://coralborispol.com" />
@@ -73,7 +73,7 @@ if(!$_SESSION['urli']) {
 <div id="page" class="hfeed site">
     <a class="skip-link screen-reader-text" href="#content"><?php _e('Skip to content', 'sydney'); ?></a>
 
-    <header id="masthead" class="site-header" role="banner">
+    <header itemscope itemtype="http://schema.org/WPHeader" id="masthead" class="site-header" role="banner">
         <div class="header-wrap">
             <div class="container">
                 <div class="row">
@@ -83,9 +83,9 @@ if(!$_SESSION['urli']) {
                                     class="site-logo" src="<?php echo esc_url(get_theme_mod('site_logo')); ?>"
                                     alt="<?php bloginfo('name'); ?>"/></a>
                         <?php else : ?>
-                            <h1 class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>"
+                            <h1 itemprop="headline" class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>"
                                                       rel="home"><?php bloginfo('name'); ?></a></h1>
-                            <h2 class="site-description"><?php bloginfo('description'); ?></h2>
+                            <h2 itemprop="description" class="site-description"><?php bloginfo('description'); ?></h2>
                         <?php endif; ?>
                     </div>
                     <div class="col-md-8 col-sm-4 col-xs-12 header-menu">

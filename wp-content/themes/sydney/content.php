@@ -187,8 +187,8 @@ AND pmet.meta_value = p.id";
     }
 } ?>
 
-<!-- Тег сущности внутри тего article, который оборачивает всю область контента. Может быть обычным блоком div-->
-<article itemscope itemtype="http://schema.org/Article" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<!-- Тег сущности внутри тего article, который оборачивает всю область контента. Может быть обычным блоком div http://schema.org/Article-->
+<article itemscope itemtype="http://schema.org/BlogPosting" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <meta itemscope itemprop="mainEntityOfPage" itemType="https://schema.org/WebPage" itemid="<?php the_permalink() ?>"/> <!--Адрес главной страницы-->
     <meta itemprop="dateModified" content="<?php the_modified_time('Y-m-d')?>"/> <!--Дата последнего изменения-->
 

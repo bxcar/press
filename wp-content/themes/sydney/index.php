@@ -19,7 +19,7 @@ get_header(); ?>
 
             <?php /* Start the Loop */ ?>
             <?php while (have_posts()) : the_post(); ?>
-
+<!--                <li itemscope itemtype="http://schema.org/BlogPosting">-->
                 <?php
                 /* Include the Post-Format-specific template for the content.
                  * If you want to override this in a child theme, then include a file
@@ -27,7 +27,7 @@ get_header(); ?>
                  */
                 get_template_part('content', get_post_format());
                 ?>
-
+<!--                </li>-->
             <?php endwhile; ?>
 
             <?php the_posts_navigation(); ?>

@@ -224,7 +224,7 @@
 
 <a class="go-top"><i class="fa fa-angle-up"></i></a>
 
-<footer id="colophon" class="site-footer" role="contentinfo">
+<footer itemscope itemtype="http://schema.org/WPFooter" id="colophon" class="site-footer" role="contentinfo">
     <div class="grid foot">
         <p class="f-text1 box">ООО «ХОРОШЕЕ АГЕНТСТВО» <br/>
             ЕГРПОУ: 39818659 <br/>
