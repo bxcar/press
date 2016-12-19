@@ -229,7 +229,7 @@ jQuery(function() {
 jQuery(document).ready(function(){
 	jQuery(".wpcr3_leave_text").text('Напишите ваш отзыв здесь:');
 	jQuery("div.wpcr3_button_1.wpcr3_show_btn").text('Оставить отзыв'); //Submit your review
-	jQuery(".wpcr3_review_form_rating_field label.comment-field").text('Ваша оценка'); //Star lable
+	jQuery(".wpcr3_review_form_rating_field label.comment-field").text('Оцените качество нашей работы:'); //Star lable
 	jQuery(".wpcr3_review_form_review_field_label label.comment-field").text('Ваш отзыв'); //Review Box
 	//jQuery(".wpcr3_check_confirm label").text('123');
 	//Checkbox for confirmation

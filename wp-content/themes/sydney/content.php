@@ -187,7 +187,42 @@ AND pmet.meta_value = p.id";
     }
 } ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<!-- Тег сущности внутри тего article, который оборачивает всю область контента. Может быть обычным блоком div-->
+<article itemscope itemtype="http://schema.org/Article" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+    <meta itemscope itemprop="mainEntityOfPage" itemType="https://schema.org/WebPage" itemid="<?php the_permalink() ?>"/> <!--Адрес главной страницы-->
+    <meta itemprop="dateModified" content="<?php the_modified_time('Y-m-d')?>"/> <!--Дата последнего изменения-->
+
+    <!--Разметка публикатора(адрес, логотип, название сайта)-->
+    <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display:none;">
+        <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+            <span itemprop="streetAddress">Киевский шлях 2/6</span>
+            <span itemprop="postalCode">08300</span>
+            <span itemprop="addressLocality">Украина, Киевская обл., г.Борисполь</span>
+            <span itemprop="telephone">+38 098 11 69 555</span>
+        </div>
+        <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+            <img itemprop="url" src="http://coralborispol.com/wp-content/themes/sydney/img/logo_coral.png"/>
+            <img itemprop="image" src="http://coralborispol.com/wp-content/themes/sydney/img/logo_coral.png"/>
+            <meta itemprop="width" content="100">
+            <meta itemprop="height" content="43">
+        </div>
+        <meta itemprop="name" content="Coral Travel - г.Борисполь">
+    </div>
+    <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject" class="entry-thumb" style="display:none;">
+        <meta itemprop="width" content="272">
+        <meta itemprop="height" content="233">
+        <img itemprop="url" src="<?php the_post_thumbnail_url('sydney-large-thumb'); ?>">
+        <img itemprop="image" src="<?php the_post_thumbnail_url('sydney-large-thumb'); ?>">
+    </div>
+    <div itemscope itemtype="https://schema.org/ImageObject" style="display:none;">
+        <img itemprop="image" src="<?php the_post_thumbnail_url('sydney-large-thumb'); ?>" >
+    </div>
+
+
+
+    <div class="meta-post" style="display: none">
+        <?php sydney_posted_on(); ?>
+    </div><!-- .entry-meta -->
 
     <?php if (has_post_thumbnail() && (get_theme_mod('index_feat_image') != 1)) : ?>
         <div class="entry-thumb" style="position: relative;">
@@ -200,11 +235,11 @@ AND pmet.meta_value = p.id";
     <?php endif; ?>
 
     <header class="entry-header">
-        <?php the_title(sprintf('<h2 class="title-post"><span id="country-title" class="country-title-class" style="color: #0088e7;" href="%s" rel="bookmark">', esc_url(get_permalink())), '</span></h2>'); ?>
+        <?php the_title(sprintf('<h2 itemprop="headline" class="title-post"><span id="country-title" class="country-title-class" style="color: #0088e7;" href="%s" rel="bookmark">', esc_url(get_permalink())), '</span></h2>'); ?>
 
     </header><!-- .entry-header -->
 
-    <div class="entry-post">
+    <div itemprop="articleBody" class="entry-post">
         <?php if ((get_theme_mod('full_content_home') == 1 && is_home()) || (get_theme_mod('full_content_archives') == 1 && is_archive())) : ?>
             <?php the_content(); ?>
         <?php else : ?>

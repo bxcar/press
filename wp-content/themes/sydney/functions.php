@@ -358,4 +358,3 @@ function sydney_recommend_plugin() {
     tgmpa( $plugins);
 
 }
-
