@@ -63,7 +63,7 @@ session_start();
                     </div>
                     <div class="col-md-8 col-sm-4 col-xs-12 header-menu">
                         <div class="btn-menu"></div>
-                        <nav id="mainnav" class="mainnav" role="navigation" style="color: red;">
+                        <nav itemscope itemtype="https://schema.org/SiteNavigationElement" id="mainnav" class="mainnav" role="navigation" style="color: red;">
                             <?php wp_nav_menu(array('theme_location' => 'primary', 'fallback_cb' => 'sydney_menu_fallback')); ?>
                         </nav><!-- #site-navigation -->
                     </div>

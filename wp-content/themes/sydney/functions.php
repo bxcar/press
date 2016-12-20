@@ -44,6 +44,14 @@
 	<?php
 }
 
+function nav($content) {
+	$pattern = "<a ";
+	$replacement = '<a itemprop="url" ';
+	$content = str_replace($pattern, $replacement, $content);
+	return $content;
+}
+add_filter('wp_nav_menu', 'nav');
+
 update_option( 'siteurl', 'http://192.168.0.98' );
 update_option( 'home', 'http://192.168.0.98' );
 $my_post = array();
