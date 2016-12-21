@@ -6,24 +6,24 @@ class WPCustomerReviewsAdmin3 extends WPCustomerReviews3
 	var $admin_init_ran = false;
 	var $meta_box_posts = array();
 	var $meta_box_reviews = array();
-	
+
 	function __construct() {
 	}
-	
+
 	function start_admin($parentClass) {	
 		$this->setSharedVars($parentClass);
 	}
-	
+
 	function check_admin_options_nonce() {
 		check_admin_referer("wpcr3_admin_options");
 	}
-	
+
 	function my_output_settings_section($id) {
 		$submit_name = $this->prefix."_save_settings";
-		
+
 		$params = array($submit_name);
 		$this->param($params);
-		
+
 		if ($this->p->$submit_name == $id) {
 			$this->update_options($id);
 		}
@@ -39,16 +39,16 @@ class WPCustomerReviewsAdmin3 extends WPCustomerReviews3
 		<?php
 		submit_button();
 	}
-	
+
 	function my_output_setting($settingObj) {
 		$options = $settingObj->options;
 		$options->hint = isset($options->hint) ? $options->hint : "";
 		$options->class = isset($options->class) ? $options->class : "";
 		$options->addmore = isset($options->addmore) && $options->addmore == "1" ? true : false;
-		
+
 		$name = $this->prefix.'_option_'.$settingObj->name;
 		$value = $this->options[$settingObj->name];
-		
+
 		echo '
 			<tr class="setting_'.$name.'">
 				<th scope="row">
@@ -57,7 +57,7 @@ class WPCustomerReviewsAdmin3 extends WPCustomerReviews3
 				</th>
 				<td>
 		';
-		
+
 		if ($options->type === "text") {
 			echo '	<input class="'.$options->class.'" type="text" name="'.$name.'" value="'.$value.'" />';
 		} else if ($options->type === "select") {
@@ -71,13 +71,13 @@ class WPCustomerReviewsAdmin3 extends WPCustomerReviews3
 			echo '	<table class="table_multi_input_checkbox" style="border-right:1px solid #bbb;border-bottom:1px solid #ddd;">';
 			foreach ($options->options as $valObj) {
 				echo '		<tr><td>';
-				if (isset($options->editable_label) && $options->editable_label == "1") {				
+				if (isset($options->editable_label) && $options->editable_label == "1") {
 					echo '<input class="'.$options->class.'" name="'.$name.'['.$valObj->value.'][label]" value="'.$value[$valObj->value]['label'].'" />';
 				} else {
 					echo $value[$valObj->value]['label'];
 				}
 				echo '		</td>';
-				
+
 				foreach ($valObj->checkboxes as $cbObj) {
 					if ($cbObj->default == "-1") {
 						echo '<td></td>';
@@ -97,68 +97,68 @@ class WPCustomerReviewsAdmin3 extends WPCustomerReviews3
 			}
 			echo '	</table>';
 		}
-		
+
 		echo '
 				</td>
 			</tr>
 		';
 	}
-	
+
 	function real_admin_init() {
 		$this->admin_init_ran = true;
-		
+
 		add_action('admin_head', array(&$this, 'admin_head'));
 		add_action('admin_notices', array(&$this, 'admin_notices'));
 		add_action('save_post', array(&$this, 'admin_save_post'), 10, 3); // 3 arguments
 		add_action('manage_'.$this->prefix.'_review_posts_custom_column', array(&$this, 'admin_custom_review_column'), 10, 2); // 2 arguments
 		add_action('restrict_manage_posts', array(&$this, 'review_filter_list'));
 		add_action('load-edit.php', array(&$this, 'load_custom_filter'));
-		
+
 		add_filter('manage_edit-'.$this->prefix.'_review_columns', array(&$this, 'admin_filter_custom_review_columns') );
 		add_filter('plugin_action_links_'.plugin_basename(__FILE__), array(&$this, 'plugin_settings_link'));
 		add_filter('post_updated_messages', array(&$this, 'admin_post_updated_messages'));
 		add_filter('manage_edit-wpcr3_review_sortable_columns', array(&$this, 'review_sortable_columns'));
 		add_filter('request', array(&$this, 'review_sortable_columns_orderby'));
-		
+
 		$this->enqueue_admin_stuff();
 		$this->my_add_meta_box();
-		
+
 		$params = array('action');
 		$this->param($params);
-		
+
 		/* used for redirecting to settings page upon initial activation */
 		if (get_option($this->prefix.'_gotosettings', false)) {
 			delete_option($this->prefix.'_gotosettings');
-			
+
 			$this->post_activate();
-			
+
 			/* no auto redirect if upgrading */
 			if ($this->p->action === 'activate-plugin') { return false; }
 
 			$url = get_admin_url().'admin.php?page='.$this->prefix.'_options';
 			$this->redirect($url);
 		}
-		
+
 		if ($this->options === false) {
 			$this->post_activate();
 		}
-		
+
 		$this->create_settings();
 		$this->notice_ignore(); /* admin notices */
 	}
-	
+
 	function post_activate() {
 		if ($this->pro !== true) {
-			unset($this->options['templates']);			
+			unset($this->options['templates']);
 			update_option($this->options_name, $this->options);
 		}
-		
+
 		$this->create_settings();
 		$this->check_migrate();
-		
+
 		$this->notify_activate(1); // notify on initial activation, reactivation, upgrade
 	}
-	
+
 	// generates new "-generated" CSS file based on template version
 	function generate_css() {
 		$can_write_css = $this->can_write_css();
@@ -167,31 +167,31 @@ class WPCustomerReviewsAdmin3 extends WPCustomerReviews3
 			file_put_contents($can_write_css["filename"], $css, LOCK_EX); // overwrites -generated.css
 		}
 	}
-	
+
 	function load_template($file, $ext, $force) {
 		if ($this->options === false || !isset($this->options['templates'])) {
 			$force = true;
 		}
-	
+
 		if ($force === true || array_key_exists($file, $this->options['templates']) === false) {
 			$rtn = file_get_contents($this->getplugindir().'include/templates/'.$file.'.'.$ext);
 			$rtn = preg_replace('/%---.*?---%/ims', '', $rtn);
 		} else {
 			$rtn = $this->options['templates'][$file];
 		}
-		
+
 		return $rtn;
 	}
-	
+
 	function update_db_version($new_version) {
 		$this->options['dbversion'] = $new_version;
 		update_option($this->options_name, $this->options);
 		return $this->options['dbversion'];
 	}
-	
+
 	function merge_options() {
 		$default_options = array();
-			
+
 		// begin: build options from settings_sections ( and get defaults )
 		foreach ($this->settings_sections as $section_id => $sectionArr) {
 			foreach ($sectionArr as $settingArr) {
@@ -232,7 +232,7 @@ class WPCustomerReviewsAdmin3 extends WPCustomerReviews3
 				$this->options[$col] = $def_val;
 				$has_new = true;
 			}
-			
+
 			// allows for associative arrays up to 2 depth [ "standard_fields" => [ "fname" => [ "ask" : "1" ] ] ]
 			if (is_array($def_val)) {
 				foreach ($def_val as $acol => $aval) {
@@ -240,7 +240,7 @@ class WPCustomerReviewsAdmin3 extends WPCustomerReviews3
 						$this->options[$col][$acol] = $aval;
 						$has_new = true;
 					}
-					
+
 					if (is_array($aval)) {
 						foreach ($aval as $acol2 => $aval2) {
 							if (!isset($this->options[$col][$acol][$acol2])) {
@@ -252,19 +252,19 @@ class WPCustomerReviewsAdmin3 extends WPCustomerReviews3
 				}
 			}
 		}
-		
-		if ($has_new) {	
+
+		if ($has_new) {
 			update_option($this->options_name, $this->options);
 		}
 		// end: magically easy options migrations to newer versions
-		
+
 		$this->post_update_options();
 	}
-	
+
 	function post_update_options() {
 		$this->generate_css();
 	}
-	
+
 	function get_cleaned_dbversion() {
 		$current_dbversion = ($this->options !== false && isset($this->options['dbversion'])) ? $this->options['dbversion'] : 0;
         $current_dbversion = intval(str_replace('.', '', $current_dbversion));
@@ -276,7 +276,7 @@ class WPCustomerReviewsAdmin3 extends WPCustomerReviews3
 		$plugin_db_version = intval(str_replace('.', '', $this->plugin_version));
 
 		$this->merge_options();
-		
+
         if ($current_dbversion == $plugin_db_version) {
             return;
         }
@@ -296,7 +296,7 @@ class WPCustomerReviewsAdmin3 extends WPCustomerReviews3
 			$this->update_db_version($plugin_db_version);
 		}
     }
-	
+
 	function my_add_settings_section($id, $label, $type) {
 		$newSection = new stdClass();
 		$newSection->id = $id;
@@ -304,7 +304,7 @@ class WPCustomerReviewsAdmin3 extends WPCustomerReviews3
 		$newSection->type = $type;
 		$this->settings_sections[$id] = array();
 	}
-	
+
 	function my_add_setting($section_id, $name, $label, $options_json) {
 		$newSetting = new stdClass();
 		$newSetting->name = $name;
@@ -313,10 +313,10 @@ class WPCustomerReviewsAdmin3 extends WPCustomerReviews3
 		$newSetting->options = json_decode($options_json);
 		$this->settings_sections[$section_id][] = $newSetting;
 	}
-	
+
 	function create_ask_require_show($label, $name, $ask, $require, $show, $rate, $has_rating, $hint) {
 		// pass -1 to ask,require,show to disable this checkbox from being output
-		
+
 		$rtn = '
 			{
 				"label" : "'.$label.'",
@@ -338,10 +338,10 @@ class WPCustomerReviewsAdmin3 extends WPCustomerReviews3
 		';
 		return $rtn;
 	}
-	
+
 	function create_settings() {
 		$this->settings_sections = array();
-	
+
 		$options_yesno = '[
 			{ "label" : "Yes", "value" : "1" },
 			{ "label" : "No", "value" : "0" }
@@ -354,7 +354,7 @@ class WPCustomerReviewsAdmin3 extends WPCustomerReviews3
 		$this->my_add_setting($section_id, 'act_uniq', 'Activation ID', '{ "type" : "text", "default" : "" }');
 		$this->my_add_setting($section_id, 'activated', 'Activated', '{ "type" : "text", "default" : "1" }');
 		$this->my_add_setting($section_id, 'dbversion', 'Database Version', '{ "type" : "text", "default" : "0" }');
-		
+
 		$templates = array();
 		foreach ($this->all_templates as $file => $ext) {
 			$templates[$file] = $this->load_template($file, $ext, false);
@@ -398,29 +398,29 @@ class WPCustomerReviewsAdmin3 extends WPCustomerReviews3
 		$this->my_add_setting($section_id, 'reviews_per_page', 'Reviews shown per page', '{ "type" : "text", "class" : "w40px", "default" : "10" }');
 		$this->my_add_setting($section_id, 'support_us', 'Support us', '{ "hint" : "Please support the developer! If yes, a \"Powered by WP Customer Reviews\" link will display below reviews.", "type" : "select", "options" : '.$options_yesno.', "default" : "0" }');
 	}
-	
+
 	// adding menu items to admin must be done in admin_menu which gets executed BEFORE admin_init
 	function real_admin_menu() {
 		add_menu_page('Reviews', 'Reviews', 'edit_others_posts', $this->prefix.'_view_reviews', '', $this->getpluginurl() . 'css/star.png', '50.92'); // try to resolve issues with other plugins
 		add_submenu_page($this->prefix.'_view_reviews', 'WP Customer Reviews - Settings', 'Plugin Settings', 'manage_options', $this->options_url_slug, array(&$this, 'admin_options'));
 	}
-	
+
 	function plugin_settings_link($links) {
         $url = get_admin_url().'admin.php?page='.$this->options_url_slug;
         array_unshift($links, "<a href='$url'>Settings</a>");
         return $links;
     }
-	
+
 	function admin_head() {
 		global $post;
 		if ($post != '' && $post->post_type == $this->prefix.'_review') {
 			remove_action('media_buttons', 'media_buttons'); // do not allow media uploads for reviews
 		}
 	}
-	
+
 	function redirect($url, $cookie = array()) {
         $headers_sent = headers_sent();
-        
+
         if ($headers_sent == true) {
             // use JS redirect and add cookie before redirect
             // we do not html comment script blocks here - to prevent any issues with other plugins adding content to newlines, etc
@@ -444,10 +444,10 @@ class WPCustomerReviewsAdmin3 extends WPCustomerReviews3
 			}
             wp_redirect($url); // a real redirect
         }
-        
+
         exit();
     }
-	
+
 	/* begin - admin notices */
 	function admin_notices() {
 		$url = $_SERVER['REQUEST_URI'] . (strstr($_SERVER['REQUEST_URI'], "?") === false ? "?" : "&");
@@ -457,7 +457,7 @@ class WPCustomerReviewsAdmin3 extends WPCustomerReviews3
 				"enabled" => (get_option("wpcr_options") !== false) // only show if upgraded from 2x to 3x
 			)
 		);
-		
+
 		foreach ($notices as $noticeKey => $notice) {
 			$preNoticeKey = $this->prefix."_admin_notice_".$noticeKey;
 			if (!isset($this->options[$preNoticeKey]) && $notice["enabled"] === true) {
@@ -465,7 +465,7 @@ class WPCustomerReviewsAdmin3 extends WPCustomerReviews3
 			}
 		}
 	}
-	
+
 	function notice_ignore() {
 		/* If user clicks to dismiss the notice, add to plugin settings */
 		foreach($this->p as $key => $val) {
@@ -478,7 +478,7 @@ class WPCustomerReviewsAdmin3 extends WPCustomerReviews3
 		}
 	}
 	/* end - admin notices */
-	
+
 	function admin_post_updated_messages($messages) {
 		global $post;
 		if ($post == '') { return $messages; }
@@ -490,8 +490,8 @@ class WPCustomerReviewsAdmin3 extends WPCustomerReviews3
 		}
 		return $messages;
 	}
-	
-	function my_add_meta_box() {		
+
+	function my_add_meta_box() {
 		$this->meta_box_posts = array(
 			'id' => $this->prefix.'-meta-box',
 			'title' => '<img src="'.$this->getpluginurl().'css/star.png" />&nbsp;WP Customer Reviews',
@@ -520,7 +520,7 @@ class WPCustomerReviewsAdmin3 extends WPCustomerReviews3
 						'product' => 'Product'
 					)
 				),
-				
+
 				array(
 					'name' => 'Business Name',
 					'desc' => '',
@@ -575,7 +575,7 @@ class WPCustomerReviewsAdmin3 extends WPCustomerReviews3
 					'id' => $this->prefix.'_business_url',
 					'type' => 'text'
 				),
-				
+
 				array(
 					'name' => 'Product Name',
 					'desc' => '',
@@ -596,7 +596,7 @@ class WPCustomerReviewsAdmin3 extends WPCustomerReviews3
 				)
 			)
 		);
-	
+
 		$args = array('public' => true);
 		if (!is_array($post_types = get_post_types($args))) {
 			$post_types = array();
@@ -605,18 +605,18 @@ class WPCustomerReviewsAdmin3 extends WPCustomerReviews3
 		$my_post_type = $this->prefix.'_review';
 		unset($post_types['attachment']);
 		unset($post_types[$my_post_type]);
-		
+
 		foreach ($post_types as $post_type) {
 			add_meta_box( $this->meta_box_posts['id'], $this->meta_box_posts['title'], array(&$this, 'show_meta_box_fields'), $post_type, $this->meta_box_posts['context'], $this->meta_box_posts['priority'], array('type' => 'meta_box_posts') );
 		}
-		
+
 		$tmpPosts = $this->get_all_posts_pages(true);
 		$postArr = array('' => '-- Select Post --');
 		foreach ($tmpPosts->posts as $p) {
 			if ($p->post_type === "attachment") { continue; }
 			$postArr[$p->ID] = $p->post_title;
 		}
-		
+
 		$this->meta_box_reviews = array(
 			'id' => $this->prefix.'-meta-box-reviews',
 			'title' => '<img src="'.$this->getpluginurl().'css/star.png" />&nbsp;Review Details',
@@ -669,11 +669,11 @@ class WPCustomerReviewsAdmin3 extends WPCustomerReviews3
 				)
 			)
 		);
-		
+
 		if (isset($this->options['custom_fields'])) {
 			$i = 0;
 			foreach ($this->options['custom_fields'] as $name => $fieldArr) {
-				$i++;			
+				$i++;
 				if ($fieldArr['ask'] == 1 || $fieldArr['show'] == 1) {
 					$this->meta_box_reviews['fields'][] = array(
 						'name' => $fieldArr['label'],
@@ -684,11 +684,11 @@ class WPCustomerReviewsAdmin3 extends WPCustomerReviews3
 				}
 			}
 		}
-		
+
 		// add for reviews
 		add_meta_box( $this->meta_box_reviews['id'], $this->meta_box_reviews['title'], array(&$this, 'show_meta_box_fields'), $this->prefix.'_review', $this->meta_box_reviews['context'], $this->meta_box_reviews['priority'], array('type' => 'meta_box_reviews') );
 	}
-	
+
 	function get_all_posts_pages($only_plugin_enabled_posts) {
 		$args = array(
 			'post_type' => 'any',
@@ -698,31 +698,31 @@ class WPCustomerReviewsAdmin3 extends WPCustomerReviews3
 			'suppress_filters' => false,
 			'nopaging' => true
 		);
-		
+
 		if ($only_plugin_enabled_posts) {
 			$args['meta_key'] = $this->prefix.'_enable';
 			$args['meta_value'] = '1';
 		}
-		
-		$tmp = new WP_Query($args);		
+
+		$tmp = new WP_Query($args);
 		return $tmp;
 	}
-	
+
 	// update = false for wp 3.6 support
 	function admin_save_post($post_id, $post, $update = false) {
 		if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) { return $post_id; } // do nothing special if autosaving
 		if (defined('DOING_AJAX') && DOING_AJAX) { return $post_id; } // do nothing special if ajax
 		if (defined('DOING_CRON') && DOING_CRON) { return $post_id; } // do nothing special if cron
 		if (!current_user_can('edit_post', $post_id)) { return $post_id; } // do nothing special if user does not have permissions
-		
+
 		$params = array('_wpnonce', 'bulk_edit');
 		$this->param($params);
-		
+
 		if ($this->p->_wpnonce !== '' && $this->p->bulk_edit === '') {
 			// update meta if changed, delete it if not set or blank
 			$types = array('meta_box_posts','meta_box_reviews'); // $this->meta_box_posts, $this->meta_box_reviews
 			foreach ($types as $type) {
-				$my_type = $this->$type; // $this->meta_box_posts, $this->meta_box_reviews				
+				$my_type = $this->$type; // $this->meta_box_posts, $this->meta_box_reviews
 				foreach ($my_type['fields'] as $field) {
 					$old = get_post_meta($post_id, $field['id'], true);
 					if (isset($this->p->{$field['id']})) {
@@ -741,7 +741,7 @@ class WPCustomerReviewsAdmin3 extends WPCustomerReviews3
 
 		return $post_id;
 	}
-	
+
 	/* start custom columns filters */
 	function admin_custom_review_column($column, $post_id) {
 		switch ($column) {
@@ -763,58 +763,58 @@ class WPCustomerReviewsAdmin3 extends WPCustomerReviews3
 				break;
 		}
 	}
-	
+
 	function admin_filter_custom_review_columns($columns) {
 		$columns[$this->prefix.'_review_post'] = 'Reviewed Post';
 		$columns[$this->prefix.'_review_rating'] = 'Rating';
 		return $columns;
 	}
-	
+
 	function review_sortable_columns($columns) {
 		//$columns[$this->prefix.'_review_post'] = $this->prefix.'_review_post';
 		$columns[$this->prefix.'_review_rating'] = $this->prefix.'_review_rating';
 		return $columns;
 	}
-	
+
 	function review_sortable_columns_orderby($request) {
 		if ($request['post_type'] !== $this->prefix.'_review') {
 			return $request;
 		}
-		
+
 		if (isset($request['orderby'])) {
 			$name = $this->prefix.'_review_rating';
 			if ($request['orderby'] === $name) {
 				$request = array_merge($request, array('meta_key' => $name, 'orderby' => 'meta_value_num'));
 			}
 		}
-		
+
 		return $request;
 	}
-	
+
 	// used for filtering on "All Reviews" page - step 1
 	function load_custom_filter() {
 		$screen = get_current_screen();
 		if ($screen->post_type !== $this->prefix.'_review') { return; }
-		
+
 		$filterName = $name = $this->prefix."_reviews_post_filter";
 		if (!isset($_GET[$filterName]) || intval($_GET[$filterName]) === 0) { return; }
-		
+
 		add_filter('posts_where' ,array(&$this, 'load_custom_filter_2'));
 	}
-	
+
 	// used for filtering on "All Reviews" page - step 2
 	function load_custom_filter_2($where) {
 		global $wpdb;
 		$filterName = $name = $this->prefix."_reviews_post_filter";
 		$filterVal = intval($_GET[$filterName]);
-        $where .= " AND ID IN (SELECT post_id FROM {$wpdb->postmeta} WHERE meta_key='{$this->prefix}_review_post' AND meta_value = {$filterVal})";		
+        $where .= " AND ID IN (SELECT post_id FROM {$wpdb->postmeta} WHERE meta_key='{$this->prefix}_review_post' AND meta_value = {$filterVal})";
 		return $where;
 	}
-	
+
 	function review_filter_list() {
 		$screen = get_current_screen();
 		if ($screen->post_type !== $this->prefix.'_review') { return; }
-		
+
 		$name = $this->prefix."_reviews_post_filter";
 		$getName = (isset($_GET[$name])) ? intval($_GET[$name]) : 0;
 		?>
@@ -829,20 +829,20 @@ class WPCustomerReviewsAdmin3 extends WPCustomerReviews3
 		<?php
 	}
 	/* end custom columns filters */
-	
+
 	function show_meta_box_fields($post, $args) {
 		$my_args = $args['args'];
 		$my_type = $this->{$my_args['type']}; // $this->meta_box_posts, $this->meta_box_reviews
-		
+
 		echo '<table class="form-table">';
 
 		foreach ($my_type['fields'] as $field) {
 			$params = array('default');
 			$this->param($params, $field);
-			
+
 			// get current post meta data
 			$meta = get_post_meta($post->ID, $field['id'], true);
-			
+
 			echo '<tr>',
 				 '<th style="width:30%"><label for="', $field['id'], '">', $field['name'], '</label></th>',
 				 '<td>';
@@ -867,7 +867,7 @@ class WPCustomerReviewsAdmin3 extends WPCustomerReviews3
 			echo '<div style="padding-top:5px;"><small>'.$field['desc'].'</small></div>';
 			echo '<td></tr>';
 		}
-		
+
 		echo '</table>';
 	}
 
@@ -877,15 +877,15 @@ class WPCustomerReviewsAdmin3 extends WPCustomerReviews3
 
 		$params = array('page','post','post_type');
 		$this->param($params);
-		
+
 		if ($this->p->post !== '' || $this->p->post_type !== '' || $this->p->page == $this->options_url_slug) {
 			wp_register_script('wp-customer-reviews-admin',$pluginurl.'js/wp-customer-reviews-admin.js',array('jquery'),$this->plugin_version);
-			wp_register_style('wp-customer-reviews-admin',$pluginurl.'css/wp-customer-reviews-admin.css',array(),$this->plugin_version);  
+			wp_register_style('wp-customer-reviews-admin',$pluginurl.'css/wp-customer-reviews-admin.css',array(),$this->plugin_version);
 			wp_enqueue_script('wp-customer-reviews-admin');
 			wp_enqueue_style('wp-customer-reviews-admin');
 		}
 	}
-	
+
 	/* v4 uuid */
 	function gen_uuid() {
 		return sprintf( '%04x%04x-%04x-%04x-%04x-%04x%04x%04x',
@@ -896,27 +896,27 @@ class WPCustomerReviewsAdmin3 extends WPCustomerReviews3
 			mt_rand( 0, 0xffff ), mt_rand( 0, 0xffff ), mt_rand( 0, 0xffff )
 		);
 	}
-	
+
     // this is used for notification of new releases and will not be shared with any third party.
     function notify_activate($act_flag) {
 		// $act flag [ 1 = activation (includes reactivation/upgrade) , 2 = deactivation ]
-        
+
 		if (!isset($this->options['act_uniq']) || $this->options['act_uniq'] == '') {
             $this->options['act_uniq'] = $this->gen_uuid();
             update_option($this->options_name, $this->options);
         }
-		
+
 		if (function_exists('fsockopen') === false && function_exists('pfsockopen') === false && function_exists('stream_socket_client') === false) {
 			return;
 		}
-		
+
         /* TO DISABLE THIS FUNCTION, UNCOMMENT THE FOLLOWING LINE */
         /* return; */
-        
+
 		global $wp_version;
         $request = 'plugin='.$this->prefix.'&doact='.$act_flag.'&email='.urlencode(stripslashes($this->options['act_email'])).'&version='.$this->plugin_version.'&support='.$this->options['support_us'].'&uuid='.$this->options['act_uniq'];
         $host = "www.gowebsolutions.com"; $port = 80; $wpurl = get_bloginfo('wpurl');
-        
+
         $http_request  = "POST /plugin-activation/activate.php HTTP/1.0\r\n";
         $http_request .= "Host: www.gowebsolutions.com\r\n";
         $http_request .= "Content-Type: application/x-www-form-urlencoded; charset=utf-8\r\n";
@@ -927,7 +927,7 @@ class WPCustomerReviewsAdmin3 extends WPCustomerReviews3
 
         $response = '';
 		$ret = false;
-		
+
 		if (function_exists('fsockopen')) {
 			$fs = @fsockopen($host, $port, $errno, $errstr, 10);
 		} else if (function_exists('pfsockopen')) {
@@ -935,7 +935,7 @@ class WPCustomerReviewsAdmin3 extends WPCustomerReviews3
 		} else if (function_exists('stream_socket_client')) {
 			$fs = stream_socket_client("tcp://{$host}:{$port}", $errno, $errstr, 10);
 		}
-		
+
         if ($fs !== false) {
 			stream_set_timeout($fs, 10);
             fwrite($fs, $http_request);
@@ -945,22 +945,22 @@ class WPCustomerReviewsAdmin3 extends WPCustomerReviews3
             fclose($fs);
             $response = explode("\r\n\r\n", $response, 2);
         }
-		
+
 		// var_dump($response);exit();
     }
-	
+
     function update_options($id) {
 		$this->security();
 		$this->check_admin_options_nonce();
-    	
+
 		$default_options = $this->options;
-		
+
 		foreach ($this->settings_sections[$id] as $settingArr) {
 			$name = $settingArr->name;
 			$options = $settingArr->options;
 			$postName = $this->prefix."_option_".$name;
 			$postVal = $this->p->$postName;
-			
+
 			if ($options->type === "text") {
 				$default_options[$name] = $postVal;
 			} else if ($options->type === "select") {
@@ -984,38 +984,38 @@ class WPCustomerReviewsAdmin3 extends WPCustomerReviews3
 				}
 			}
 		}
-		
+
 		// simple validation
 		if (intval($default_options['reviews_per_page']) < 1) { $default_options['reviews_per_page'] = 10; }
-		
+
 		$this->options = $default_options;
 		update_option($this->options_name, $this->options);
-		
+
 		$this->post_update_options();
 
 		add_settings_error($this->prefix.'_updateoptions', $this->prefix.'_updateoptions', 'Your settings have been saved.', 'updated');
 		settings_errors($this->prefix.'_updateoptions');
     }
-	
+
     function my_get_pages() { /* gets pages, even if hidden using a plugin */
         global $wpdb;
-        
+
         $res = $wpdb->get_results("SELECT `ID`,`post_title` FROM `$wpdb->posts` WHERE `post_status` = 'publish' AND `post_type` = 'page' ORDER BY `ID`");
         return $res;
     }
-    
+
     function security() {
         if (!current_user_can('manage_options')) {
             wp_die( __('You do not have sufficient permissions to access this page.') );
         }
     }
-	
+
 	function tab_about() {
 		?>
 		<div class="metabox-holder">
 			<div class="postbox">
 				<h3>About WP Customer Reviews</h3>
-				
+
 				<div class="inside">
 					<p>
 						<?php if ($this->pro) : ?>
@@ -1045,7 +1045,7 @@ class WPCustomerReviewsAdmin3 extends WPCustomerReviews3
 				<h3>Support Us</h3>
 				<div class="inside">
 					<p style="color:#060;">
-						If you would like to be notified of any major updates, please enter your email 
+						If you would like to be notified of any major updates, please enter your email
 						address below. We do not share your information with any third party.
 					</p>
 					<label for="email">Email Address: </label><input type="text" size="32" id="act_email" name="act_email" value="<?php echo $this->options["act_email"]; ?>" /> (optional)
@@ -1060,11 +1060,11 @@ class WPCustomerReviewsAdmin3 extends WPCustomerReviews3
 						<input type="submit" class="button-primary" value="Save Changes" name="support_submit" />
 					</p>
 				</div>
-			</div>						
+			</div>
 		</div>
 		<?php
 	}
-	
+
 	function tab_how_to_use() {
 		?>
 		<style>
@@ -1076,7 +1076,7 @@ class WPCustomerReviewsAdmin3 extends WPCustomerReviews3
 				<h3>How to use</h3>
 				<div class="inside">
 					<p class="boldBlue">
-						When editing any post or page, scroll down to the setting block for WP Customer Reviews and enable it.<br /> 
+						When editing any post or page, scroll down to the setting block for WP Customer Reviews and enable it.<br />
 						If you do not see this section, click on "Screen Options" (top-right) when editing a post and turn it on.
 					</p>
 				</div>
@@ -1086,19 +1086,19 @@ class WPCustomerReviewsAdmin3 extends WPCustomerReviews3
 						The following shortcodes can be used in the content of any page.
 					</p>
 					<p>
-						[WPCR_SHOW 
-							POSTID="<span>ALL</span>" 
-							NUM="<span>5</span>" 
-							PAGINATE="<span>1</span>" 
+						[WPCR_SHOW
+							POSTID="<span>ALL</span>"
+							NUM="<span>5</span>"
+							PAGINATE="<span>1</span>"
 							PERPAGE="<span>5</span>"
-							SHOWFORM="<span>1</span>" 
-							HIDEREVIEWS="<span>0</span>" 
-							HIDERESPONSE="<span>0</span>" 
-							SNIPPET="<span></span>" 
-							MORE="<span></span>" 
-							HIDECUSTOM="<span>0</span>" 
-						] 
-						<br /><small>is available to show the latest reviews. Explanation below: <br /> 
+							SHOWFORM="<span>1</span>"
+							HIDEREVIEWS="<span>0</span>"
+							HIDERESPONSE="<span>0</span>"
+							SNIPPET="<span></span>"
+							MORE="<span></span>"
+							HIDECUSTOM="<span>0</span>"
+						]
+						<br /><small>is available to show the latest reviews. Explanation below: <br />
 						POSTID="<span>ALL</span>" to show recent reviews from ALL posts/pages or POSTID="123" to show recent reviews from post/page ID #123<br />
 						NUM="<span>5</span>" will show a maximum of 5 reviews.<br />
 						PAGINATE="<span>0</span>" will disable pagination of reviews.<br />
@@ -1115,8 +1115,8 @@ class WPCustomerReviewsAdmin3 extends WPCustomerReviews3
 				<h3>PHP Functions ( use in your theme/template files )</h3>
 				<div class="inside">
 					<p>
-						To create a more advanced implementation, you can use any shortcode in your 
-						theme/template files. Any developer familiar with customizing WordPress themes/templates 
+						To create a more advanced implementation, you can use any shortcode in your
+						theme/template files. Any developer familiar with customizing WordPress themes/templates
 						can assist.
 					</p>
 					<p>
@@ -1127,38 +1127,38 @@ class WPCustomerReviewsAdmin3 extends WPCustomerReviews3
 		</div>
 		<?php
 	}
-	
+
 	function tab_form_settings() {
 		$this->my_output_settings_section('form_settings');
 	}
-	
+
 	function tab_display_settings() {
 		echo '<br /><strong>Tip: You can completely customize the display of the review form and reviews on the Customize Templates / CSS tab.</strong>';
 		$this->my_output_settings_section('display_settings');
 	}
-	
+
 	function tab_templates() {
 		echo '<br /><strong>This feature is available in the Pro version which will be announced soon.</strong>';
 	}
-	
+
 	function tab_tools() {
 		$params = array("wpcr3_debug_code");
 		$this->param($params);
-		
+
 		?>
 		<div style="color:#c00;">
 			<br />
 			You should ALWAYS make a backup of your files and database before performing an action.<br />
 			Using any of these codes is at your own risk and we cannot be held liable for unintended results or lost data.<br />
 		</div>
-		
+
 		<?php
 		if ($this->p->wpcr3_debug_code !== "") {
 			$this->check_admin_options_nonce();
-			
-			$code = sanitize_text_field(str_replace(".", "", $this->p->wpcr3_debug_code));			
+
+			$code = sanitize_text_field(str_replace(".", "", $this->p->wpcr3_debug_code));
 			$file = $this->getplugindir().'include/admin/tools/'.$code.'.php';
-			
+
 			if (file_exists($file)) {
 				echo "<br />Running: <strong>{$code}</strong><br /><br />";
 				include($file);
@@ -1166,11 +1166,11 @@ class WPCustomerReviewsAdmin3 extends WPCustomerReviews3
 			} else {
 				echo "<br /><strong>{$code} is not valid</strong><br />";
 			}
-			
+
 			echo "<hr />";
 		}
 		?>
-		
+
 		<br />
 		If you are having issues, we have provided fixes for some common scenarios, listed below.<br />
 		<br />
@@ -1200,26 +1200,26 @@ class WPCustomerReviewsAdmin3 extends WPCustomerReviews3
 		<input type="submit" name="submit" id="submit" class="button button-primary" value="Submit" />
 		<?php
 	}
-	
+
     function admin_options() {
         $this->security();
-		
+
 		$params = array('activate','act_email','clearopts','support_submit');
 		$this->param($params);
-		
+
 		if ($this->p->clearopts == 1 || $this->p->support_submit !== '') {
 			$this->check_admin_options_nonce();
 		}
-		
+
 		// begin: clear options for debugging, reset to defaults
 		if ($this->p->clearopts == 1) {
 			// need to use &clearopts=1&_wpnonce=<nonce from "tab" form on page being viewed>
-			
+
 			delete_option($this->options_name);
 			$this->redirect("admin.php?page=".$this->options_url_slug);
 		}
 		// end: clear options for debugging, reset to defaults
-		
+
 		// begin: activation
 		if ($this->p->support_submit !== '') {
 			$this->options['support_us'] = ($this->p->activate === 'Yes') ? 1 : 0;
@@ -1230,7 +1230,7 @@ class WPCustomerReviewsAdmin3 extends WPCustomerReviews3
 			settings_errors($this->prefix.'_activation');
 		}
 		// end: activation
-		
+
 		$active_tab = isset($_GET['tab']) ? $_GET['tab'] : 'about';
 		$func_name = 'tab_'.$active_tab;
 		$slug = '?page='.$this->options_url_slug;
@@ -1253,14 +1253,14 @@ class WPCustomerReviewsAdmin3 extends WPCustomerReviews3
 				margin-top:0;
 			}
 		</style>
-		
+
 		<div class="wrap <?php echo $this->prefix; ?>_myplugin_options">
 			<?php if ($this->pro) : ?>
 				<h2>WP Customer Reviews <span style="color:#00f;">Pro</span> - Settings</h2>
 			<?php else : ?>
 				<h2>WP Customer Reviews <span style="color:#00f;">Lite</span> - Settings <!--<div class="need_pro"><a class="boldBlue" target="_blank" href="<?php echo $this->prolink; ?>?from=h2_upgrade">Upgrade to Pro</a></div>--> </h2>
 			<?php endif; ?>
-			
+
 			<h2 class="nav-tab-wrapper">
 				<a href="<?php echo $slug;?>&tab=about" class="nav-tab <?php echo $active_tab == 'about' ? 'nav-tab-active' : ''; ?>">About</a>
 				<a href="<?php echo $slug;?>&tab=how_to_use" class="nav-tab <?php echo $active_tab == 'how_to_use' ? 'nav-tab-active' : ''; ?>">How to use</a>
@@ -1269,17 +1269,17 @@ class WPCustomerReviewsAdmin3 extends WPCustomerReviews3
 				<a href="<?php echo $slug;?>&tab=templates" class="nav-tab <?php echo $active_tab == 'templates' ? 'nav-tab-active' : ''; ?>">Customize Templates / CSS</a>
 				<a href="<?php echo $slug;?>&tab=tools" class="nav-tab <?php echo $active_tab == 'tools' ? 'nav-tab-active' : ''; ?>">Tools</a>
 			</h2>
-			
+
 			<form method="POST" action="">
 				<?php
 					wp_nonce_field("wpcr3_admin_options");
-				
+
 					if (method_exists($this, $func_name)) {
 						$this->$func_name();
 					}
 				?>
 			</form>
-			
+
 		</div>
 		<?php
     }

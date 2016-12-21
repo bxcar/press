@@ -30,6 +30,16 @@
     <?php include "tracking_codes_and_jivosite/facebook_pixel_code.php" ?>
     <?php include "tracking_codes_and_jivosite/jivosite.php" ?>
 
+    <script>
+        jQuery(document).ready(function () {
+        var replace_month = jQuery(".wpcr3_review_datePublished").html();
+        var replaced_month = replace_month.replace('Dec', 'Дек')
+            .replace('Jan', 'Янв')
+            .replace('Feb', 'Фев');
+        jQuery(".wpcr3_review_datePublished").html(replaced_month);
+        });
+    </script>
+
 </head>
 
 <body <?php body_class(); ?>>
@@ -86,7 +96,14 @@
 
     <div id="content" class="page-wrap" style="padding-top: 30px; padding-bottom: 0;">
         <div class="container content-wrapper">
-            <div class="row">
-                <?php echo do_shortcode('[WPCR_SHOW POSTID="900" NUM="5" PAGINATE="1" PERPAGE="5" SHOWFORM="1" HIDEREVIEWS="0" HIDERESPONSE="0" SNIPPET="" MORE="" HIDECUSTOM="0" ] '); ?>
+            <div class="row" style="margin-left: 3% !important;">
+                <p style="
+                width:60%;
+                font-size: 14px;
+                color: #0083d0;
+                line-height: 25px;
+                font-family: 'Open Sans', sans-serif;">Пожалуйста, оставьте свои впечатления о путешествиях вместе с нами и о работе наших менеджеров.
+                    Мы щепетильно относимся к качеству своей работы и потому нам очень важны отзывы наших туристов!</p>
+                    <?php echo do_shortcode('[WPCR_SHOW POSTID="900" NUM="5" PAGINATE="1" PERPAGE="5" SHOWFORM="1" HIDEREVIEWS="0" HIDERESPONSE="0" SNIPPET="" MORE="" HIDECUSTOM="0" ] '); ?>
 
 

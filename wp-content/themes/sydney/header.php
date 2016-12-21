@@ -15,7 +15,7 @@ if (!$_SESSION['urli']) {
 <html <?php language_attributes(); ?>>
 <head itemscope itemtype="http://schema.org/WebSite">
     <title itemprop='name'>Горящие туры в Борисполе: Coral Travel</title>
-    <link rel="canonical" href="coralborispol.com" itemprop="url">
+<!--    <link rel="canonical" href="http://coralborispol.com" itemprop="url">-->
 
 
     <meta property="og:type" content="website"/>
@@ -215,5 +215,5 @@ if (!$_SESSION['urli']) {
                 <h2 id="goto-from-top-button" class="tour-header">Лучшие Цены на&nbsp;Туры по&nbsp;направлениям</h2>
                 <?php //if(function_exists('the_ratings')) { the_ratings(); } ?>
                 <div style="display: none">
-                <?php echo do_shortcode('[WPCR_SHOW POSTID="900" NUM="5" PAGINATE="1" PERPAGE="5" SHOWFORM="1" HIDEREVIEWS="0" HIDERESPONSE="0" SNIPPET="" MORE="" HIDECUSTOM="0" ] '); ?>
+                <?php //echo do_shortcode('[WPCR_SHOW POSTID="900" NUM="5" PAGINATE="1" PERPAGE="5" SHOWFORM="1" HIDEREVIEWS="0" HIDERESPONSE="0" SNIPPET="" MORE="" HIDECUSTOM="0" ] '); ?>
                 </div>

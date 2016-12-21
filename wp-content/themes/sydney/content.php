@@ -218,8 +218,7 @@ AND pmet.meta_value = p.id";
         <img itemprop="image" src="<?php the_post_thumbnail_url('sydney-large-thumb'); ?>" >
     </div>
 
-
-
+    
     <div class="meta-post" style="display: none">
         <?php sydney_posted_on(); ?>
     </div><!-- .entry-meta -->
